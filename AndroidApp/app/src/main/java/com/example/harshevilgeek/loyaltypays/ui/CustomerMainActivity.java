@@ -3,6 +3,7 @@ package com.example.harshevilgeek.loyaltypays.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
@@ -129,6 +130,7 @@ public class CustomerMainActivity extends FragmentActivity {
             }
             Intent activityIntent = new Intent(context, CustomerMainActivity.class );
             activityIntent.putExtra(MODE, mode);
+            activityIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             context.startActivity(activityIntent);
         }
     }
@@ -379,6 +381,24 @@ public class CustomerMainActivity extends FragmentActivity {
     }
 
     private void handleItemClick (ParseObject item) {
+        if(MODE_CARD_ITEMS.equals(mMode)) {
+
+        }
+        else if (MODE_CARD_PROMOTIONS.equals(mMode)) {
+
+        }
+        else if (MODE_CARD_TYPES.equals(mMode)) {
+
+            Intent regActivity = new Intent(this, RegisterWithARetailerActivity.class);
+            regActivity.putExtra(LoyaltyConstants.KEY_COMPANY_NAME, (String)item.get(LoyaltyConstants.KEY_CARD_NAME));
+            regActivity.putExtra(LoyaltyConstants.KEY_CARD_TERMS, (String)item.get(LoyaltyConstants.KEY_CARD_TERMS));
+            regActivity.putExtra(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID, (String)item.getObjectId());
+            startActivity(regActivity);
+
+        }
+        else if(MODE_CARD_PURCHASES.equals(mMode)) {
+
+        }
 
     }
 

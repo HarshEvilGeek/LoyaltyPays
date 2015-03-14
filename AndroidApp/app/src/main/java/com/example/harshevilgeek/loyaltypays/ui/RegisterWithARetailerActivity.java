@@ -51,7 +51,7 @@ public class RegisterWithARetailerActivity  extends Activity{
 
         fullNameET = (EditText) findViewById(R.id.reg_with_name);
         emailET = (EditText) findViewById(R.id.user_email);
-        ageET = (EditText) findViewById(R.id.user_age);
+        ageET = (EditText) findViewById(R.id.user_calculated_age);
         genderET = (EditText) findViewById(R.id.user_gender);
         locationET = (EditText) findViewById(R.id.user_location);
         registerButton = (Button) findViewById(R.id.register);
@@ -99,7 +99,6 @@ public class RegisterWithARetailerActivity  extends Activity{
                         dialog.cancel();
                     }
                 })
-                .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
 
@@ -114,7 +113,7 @@ public class RegisterWithARetailerActivity  extends Activity{
             emailET.setEnabled(false);
         }
         if(age > 0) {
-            ageET.setText(age);
+            ageET.setText(String.valueOf(age));
         }
 
         if(!TextUtils.isEmpty(gender)) {
@@ -138,6 +137,7 @@ public class RegisterWithARetailerActivity  extends Activity{
         dialog.show();
 
         LoyaltyCardItem loyaltyCardItem = new LoyaltyCardItem();
+        loyaltyCardItem.setUser(user);
         loyaltyCardItem.setCustomerName(userFullName);
         loyaltyCardItem.setCustomerId(user.getObjectId());
         loyaltyCardItem.setLoyaltyCardTypeId(loyaltyCardId);
@@ -172,7 +172,7 @@ public class RegisterWithARetailerActivity  extends Activity{
         userEmail = user.getUsername();
         userFullName = (String)user.get(LoyaltyConstants.KEY_CUSTOMER_NAME);
         String dob = (String)user.get(LoyaltyConstants.KEY_CUSTOMER_DOB);
-        String gender = (String)user.get(LoyaltyConstants.KEY_CUSTOMER_GENDER);
+        gender = (String)user.get(LoyaltyConstants.KEY_CUSTOMER_GENDER);
 
         String[] dobParts = dob.split("/");
         int birthYear = Integer.valueOf(dobParts[2]);
