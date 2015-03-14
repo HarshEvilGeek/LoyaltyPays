@@ -8,6 +8,12 @@
     <string name="slogan">Be rewarded for your Loyalty</string>
     <string name="title_activity_settings">Settings</string>
     <string name="logout_full">Log out of LoyaltyPays</string>
+    <string name="progress_card_type_delete">Log out of LoyaltyPays</string>
+    <string name="post_card_type">Post Loyalty Card</string>
+    <string name="progress_posting_card_type">Posting&#8230;</string>
+
+    <string name="edit_loyalty_card">Edit</string>
+    <string name="delete_loyalty_card">Delete</string>
 
     <string name="register_with_retailer_prompt">Register with retailers to view your loyalty cards</string>
     <string name="add_new_timezone">Add a new timezone</string>

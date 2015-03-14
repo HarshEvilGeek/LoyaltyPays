@@ -4,14 +4,16 @@ import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.List;
 
 /**
  * Created by akhil on 3/14/15.
  */
-@ParseClassName("LoyaltyCardTypes")
-public class LoyaltyCardTypes extends ParseObject {
+@ParseClassName("LoyaltyCardType")
+public class LoyaltyCardType extends ParseObject {
 
     public String getCompanyId() {
         return getString(LoyaltyConstants.KEY_COMPANY_ID);
@@ -51,5 +53,17 @@ public class LoyaltyCardTypes extends ParseObject {
 
     public void setCardTerms(String cardTerms) {
         put(LoyaltyConstants.KEY_CARD_TERMS, cardTerms);
+    }
+
+    public static ParseQuery<LoyaltyCardType> getQuery() {
+        return ParseQuery.getQuery(LoyaltyCardType.class);
+    }
+
+    public ParseUser getUser() {
+        return getParseUser(LoyaltyConstants.KEY_USER);
+    }
+
+    public void setUser(ParseUser value) {
+        put(LoyaltyConstants.KEY_USER, value);
     }
 }

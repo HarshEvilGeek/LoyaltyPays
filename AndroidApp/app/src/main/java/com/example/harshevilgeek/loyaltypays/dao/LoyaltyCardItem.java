@@ -112,11 +112,11 @@ public class LoyaltyCardItem extends ParseObject {
     }
 
     public ParseUser getUser() {
-        return getParseUser("user");
+        return getParseUser(LoyaltyConstants.KEY_USER);
     }
 
     public void setUser(ParseUser value) {
-        put("user", value);
+        put(LoyaltyConstants.KEY_USER, value);
     }
 
     public static ParseQuery<LoyaltyCardItem> getQuery() {

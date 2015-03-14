@@ -88,7 +88,7 @@ public class CustomerMainActivity extends FragmentActivity {
         postsQueryAdapter.setPaginationEnabled(false);
 
         loyaltyCardGridView = (GridView) findViewById(R.id.loyalty_grid);
-        
+
         loyaltyCardGridView.setAdapter(postsQueryAdapter);
 
         // Set up the handler for an item's selection
