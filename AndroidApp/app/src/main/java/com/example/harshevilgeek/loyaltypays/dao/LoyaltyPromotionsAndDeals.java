@@ -2,6 +2,7 @@ package com.example.harshevilgeek.loyaltypays.dao;
 
 import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
 import com.parse.ParseClassName;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
@@ -47,5 +48,13 @@ public class LoyaltyPromotionsAndDeals extends ParseObject {
 
     public static ParseQuery<LoyaltyPromotionsAndDeals> getQuery() {
         return ParseQuery.getQuery(LoyaltyPromotionsAndDeals.class);
+    }
+
+    public ParseFile getPromotionImage() {
+        return getParseFile(LoyaltyConstants.KEY_PROMOTION_IMAGE);
+    }
+
+    public void setPromotionImage(ParseFile promotionImage) {
+        put(LoyaltyConstants.KEY_PROMOTION_IMAGE, promotionImage);
     }
 }

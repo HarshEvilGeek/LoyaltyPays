@@ -87,6 +87,8 @@ public class CustomerMainActivity extends FragmentActivity {
         // Disable pagination, we'll manage the query limit ourselves
         postsQueryAdapter.setPaginationEnabled(false);
 
+        loyaltyCardGridView = (GridView) findViewById(R.id.loyalty_grid);
+        
         loyaltyCardGridView.setAdapter(postsQueryAdapter);
 
         // Set up the handler for an item's selection
