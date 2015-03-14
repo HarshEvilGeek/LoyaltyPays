@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
 import com.example.harshevilgeek.loyaltypays.R;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyUser;
 import com.parse.ParseException;
+import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 /**
@@ -26,6 +28,7 @@ public class SignUpActivity extends Activity {
   private EditText usernameEditText;
   private EditText passwordEditText;
   private EditText passwordAgainEditText;
+  private String gender;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -122,4 +125,22 @@ public class SignUpActivity extends Activity {
         }
     });
   }
+
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radio_male:
+                if (checked)
+                    gender = "M";
+                    break;
+            case R.id.radio_female:
+                if (checked)
+                    gender = "F";
+                break;
+            default:
+                gender = "U";
+        }
+    }
 }
