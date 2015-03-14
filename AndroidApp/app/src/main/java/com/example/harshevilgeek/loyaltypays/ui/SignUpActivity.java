@@ -43,7 +43,7 @@ public class SignUpActivity extends Activity {
 
         // Set up the signup form.
         usernameEditText = (EditText) findViewById(R.id.username_edit_text);
-        companyNameEditText = (EditText)findViewById(R.id.company_name_edit_text);
+        companyNameEditText = (EditText)findViewById(R.id.name_edit_text);
         dobEditText = (EditText)findViewById(R.id.dob_edit_text);
         genderRadioButtonGroup = (RadioGroup) findViewById(R.id.gender_radio);
         passwordEditText = (EditText) findViewById(R.id.password_edit_text);
@@ -77,14 +77,13 @@ public class SignUpActivity extends Activity {
         if(LoyaltyConstants.VALUE_CUSTOMER_TYPE_CONSUMER.equals(userType)) {
             dobEditText.setVisibility(View.VISIBLE);
             genderRadioButtonGroup.setVisibility(View.VISIBLE);
-            companyNameEditText.setVisibility(View.GONE);
+            companyNameEditText.setHint("Customer Name");
 
         }
         else if(LoyaltyConstants.VALUE_CUSTOMER_TYPE_RETAILER.equals(userType)) {
             dobEditText.setVisibility(View.GONE);
             genderRadioButtonGroup.setVisibility(View.GONE);
-            companyNameEditText.setVisibility(View.VISIBLE);
-
+            companyNameEditText.setHint("Company Name");
         }
     }
 
@@ -150,6 +149,16 @@ public class SignUpActivity extends Activity {
                 }
             }
         });
+    }
+
+    private void signupCustomer()
+    {
+
+    }
+
+    private void signupRetailer()
+    {
+
     }
 
     public void onRadioButtonClicked(View view) {
