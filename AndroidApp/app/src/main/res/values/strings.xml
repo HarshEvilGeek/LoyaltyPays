@@ -58,9 +58,7 @@
         <item >
             @string/option_usage_history
         </item>
-        <item >
-            @string/option_my_deals
-        </item>
+
     </string-array>
 
     <string name="option_register_with_retailer">Register me with a retailer</string>

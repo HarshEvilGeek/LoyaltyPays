@@ -1,8 +1,11 @@
 package com.example.harshevilgeek.loyaltypays.ui;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
@@ -11,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -129,6 +133,7 @@ public class CustomerMainActivity extends FragmentActivity {
             }
             Intent activityIntent = new Intent(context, CustomerMainActivity.class );
             activityIntent.putExtra(MODE, mode);
+            activityIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             context.startActivity(activityIntent);
         }
     }
@@ -187,7 +192,7 @@ public class CustomerMainActivity extends FragmentActivity {
                     final int loyaltyPoints = item.getLoyaltyPoints();
 
                     companyNameView.setText(companyName);
-                    loyaltyPointsView.setText(loyaltyPoints);
+                    loyaltyPointsView.setText(String.valueOf(loyaltyPoints));
                     return view;
                 }
             };
@@ -378,7 +383,52 @@ public class CustomerMainActivity extends FragmentActivity {
         mAdapter.loadObjects();
     }
 
+    private void showLoyaltyCardDetails(ParseObject item)
+    {
+        AlertDialog.Builder loyaltyCardAlert =  new AlertDialog.Builder(this);
+        loyaltyCardAlert.setTitle("Card Details");
+        final ArrayAdapter<String> cardDetailsAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
+        String loyaltyPoints = String.valueOf(item.get(LoyaltyConstants.KEY_LOYALTY_POINTS));
+        if(loyaltyPoints == null) {
+            loyaltyPoints = "0";
+        }
+        cardDetailsAdapter.add("Loyalty Points : " + loyaltyPoints);
+        cardDetailsAdapter.add("Card Id : " + item.getObjectId());
+        cardDetailsAdapter.add("discount1");
+        cardDetailsAdapter.add("discount2");
+        cardDetailsAdapter.add("discount3");
+        loyaltyCardAlert.setNegativeButton("Ok",
+                new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        loyaltyCardAlert.setAdapter(cardDetailsAdapter,null);
+        loyaltyCardAlert.show();
+
+    }
     private void handleItemClick (ParseObject item) {
+        if(MODE_CARD_ITEMS.equals(mMode)) {
+
+            showLoyaltyCardDetails(item);
+        }
+        else if (MODE_CARD_PROMOTIONS.equals(mMode)) {
+
+        }
+        else if (MODE_CARD_TYPES.equals(mMode)) {
+
+            Intent regActivity = new Intent(this, RegisterWithARetailerActivity.class);
+            regActivity.putExtra(LoyaltyConstants.KEY_COMPANY_NAME, (String)item.get(LoyaltyConstants.KEY_CARD_NAME));
+            regActivity.putExtra(LoyaltyConstants.KEY_CARD_TERMS, (String)item.get(LoyaltyConstants.KEY_CARD_TERMS));
+            regActivity.putExtra(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID, (String)item.getObjectId());
+            startActivity(regActivity);
+
+        }
+        else if(MODE_CARD_PURCHASES.equals(mMode)) {
+
+        }
 
     }
 

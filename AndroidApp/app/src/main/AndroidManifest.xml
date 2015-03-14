@@ -24,6 +24,11 @@
             android:theme="@android:style/Theme.Holo.Light"/>
 
         <activity
+            android:name=".ui.RegisterWithARetailerActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light"/>
+
+        <activity
             android:name=".ui.RetailerMainActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light"/>
