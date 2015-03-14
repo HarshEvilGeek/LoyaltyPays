@@ -101,7 +101,13 @@ public class RetailerMainActivity extends FragmentActivity {
                 }
 
                 final String name = cardType.getCompanyName();
-                final String locationList = cardType.getCompanyLocations().toString();
+                String locationList ="";
+                try {
+                    locationList = cardType.getCardLocations().toString();
+                }
+                catch (Exception e) {
+
+                }
 
                 cardTypeName.setText(name);
                 cardTypeLocation.setText(locationList);

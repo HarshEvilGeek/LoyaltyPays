@@ -136,7 +136,7 @@ public class RetailerPostActivity extends Activity {
             loyaltyCardType.setObjectId(objectId);
         }
         loyaltyCardType.setCompanyName(name);
-        loyaltyCardType.setCompanyLocations(locationList);
+        loyaltyCardType.setCardLocations(locationList);
         loyaltyCardType.setCardTerms(terms);
         loyaltyCardType.setUser(ParseUser.getCurrentUser());
         ParseACL acl = new ParseACL();

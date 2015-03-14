@@ -1,6 +1,5 @@
 package com.example.harshevilgeek.loyaltypays.ui;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,13 +22,16 @@ import android.widget.TextView;
 import com.example.harshevilgeek.loyaltypays.R;
 import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardItem;
-import com.parse.DeleteCallback;
-import com.parse.ParseException;
+import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardPurchases;
+import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardType;
+import com.example.harshevilgeek.loyaltypays.dao.LoyaltyPromotionsAndDeals;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class CustomerMainActivity extends FragmentActivity {
@@ -40,12 +39,25 @@ public class CustomerMainActivity extends FragmentActivity {
     // Maximum results returned from a Parse query
     private static final int MAX_LOYALTY_CARD_RESULTS = 30;
 
-    private GridView loyaltyCardGridView;
+    private static final String MODE = "MODE";
+
+    private static final String MODE_CARD_ITEMS = "MODE_CARD_ITEMS";
+    private static final String MODE_CARD_TYPES = "MODE_CARD_TYPES";
+    private static final String MODE_CARD_PURCHASES = "MODE_CARD_PURCHASES";
+    private static final String MODE_CARD_PROMOTIONS = "MODE_CARD_PROMOTIONS";
+
+    private String mMode;
+
+    private GridView landingGridView;
 
     private LinearLayout modifyLayout;
 
+    private ParseQueryAdapter<? extends ParseObject> mAdapter;
+
     // Adapter for the Parse query
-    private ParseQueryAdapter<LoyaltyCardItem> postsQueryAdapter;
+    private ParseQueryAdapter<LoyaltyCardType> loyaltyCardTypeQueryAdapter;
+    private ParseQueryAdapter<LoyaltyCardPurchases> loyaltyCardPurchasesQueryAdapter;
+    private ParseQueryAdapter<LoyaltyPromotionsAndDeals> loyaltyPromotionsItemQueryAdapter;
 
     private String[] landingOptions = null;
     private DrawerLayout optionsDrawer = null;
@@ -59,6 +71,8 @@ public class CustomerMainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mMode = savedInstanceState.getString(MODE, MODE_CARD_ITEMS);
+
         setContentView(R.layout.activity_customer_main);
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -69,55 +83,16 @@ public class CustomerMainActivity extends FragmentActivity {
         drawerList.setAdapter(getAdapter());
         populateData();
 
-        ParseQueryAdapter.QueryFactory<LoyaltyCardItem> factory =
-                new ParseQueryAdapter.QueryFactory<LoyaltyCardItem>() {
-                    public ParseQuery<LoyaltyCardItem> create() {
-                        ParseQuery<LoyaltyCardItem> query = LoyaltyCardItem.getQuery();
-                        query.include(LoyaltyConstants.KEY_USER);
-                        query.orderByDescending("createdAt");
-                        ParseUser currentUser = ParseUser.getCurrentUser();
-                        query.whereEqualTo(LoyaltyConstants.KEY_USER, currentUser);
-                        query.setLimit(MAX_LOYALTY_CARD_RESULTS);
-                        return query;
-                    }
-                };
+        setAdapterAndFactory();
 
-        // Set up the query adapter
-        postsQueryAdapter = new ParseQueryAdapter<LoyaltyCardItem>(this, factory) {
-            @Override
-            public View getItemView(LoyaltyCardItem item, View view, ViewGroup parent) {
-                if (view == null) {
-                    view = View.inflate(getContext(), R.layout.loyalty_card_item, null);
-                }
-                ImageView imageView = (ImageView) view.findViewById(R.id.loyalty_card_image);
-                TextView companyNameView = (TextView) view.findViewById(R.id.company_name);
-                TextView loyaltyPointsView = (TextView) view.findViewById(R.id.loyalty_points);
+        landingGridView = (GridView) findViewById(R.id.loyalty_grid);
 
-                final String id = item.getObjectId();
-
-                final String companyName = item.getCompanyName();
-                final int loyaltyPoints = item.getLoyaltyPoints();
-
-                companyNameView.setText(companyName);
-                loyaltyPointsView.setText(loyaltyPoints);
-                return view;
-            }
-        };
-
-        // Disable automatic loading when the adapter is attached to a view.
-        postsQueryAdapter.setAutoload(false);
-
-        // Disable pagination, we'll manage the query limit ourselves
-        postsQueryAdapter.setPaginationEnabled(false);
-
-        loyaltyCardGridView = (GridView) findViewById(R.id.loyalty_grid);
-
-        loyaltyCardGridView.setAdapter(postsQueryAdapter);
+        landingGridView.setAdapter(mAdapter);
 
         // Set up the handler for an item's selection
-        loyaltyCardGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        landingGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                final LoyaltyCardItem item = postsQueryAdapter.getItem(position);
+                final ParseObject item = mAdapter.getItem(position);
                 handleItemClick(item);
             }
         });
@@ -141,6 +116,177 @@ public class CustomerMainActivity extends FragmentActivity {
 
             ((LandingOptionsAdapter)adapter).setData(optionsList);
             adapter.notifyDataSetChanged();
+        }
+    }
+
+    private void setAdapterAndFactory ()
+    {
+        if (MODE_CARD_ITEMS.equals(mMode)) {
+            ParseQueryAdapter.QueryFactory<LoyaltyCardItem> factory =
+                    new ParseQueryAdapter.QueryFactory<LoyaltyCardItem>() {
+                        public ParseQuery<LoyaltyCardItem> create() {
+                            ParseQuery<LoyaltyCardItem> query = LoyaltyCardItem.getQuery();
+                            query.include(LoyaltyConstants.KEY_USER);
+                            query.orderByDescending("createdAt");
+                            ParseUser currentUser = ParseUser.getCurrentUser();
+                            query.whereEqualTo(LoyaltyConstants.KEY_USER, currentUser);
+                            query.setLimit(MAX_LOYALTY_CARD_RESULTS);
+                            return query;
+                        }
+                    };
+
+            // Set up the query adapter
+            mAdapter = new ParseQueryAdapter<LoyaltyCardItem>(this, factory) {
+                @Override
+                public View getItemView(LoyaltyCardItem item, View view, ViewGroup parent) {
+                    if (view == null) {
+                        view = View.inflate(getContext(), R.layout.loyalty_card_item, null);
+                    }
+                    ImageView imageView = (ImageView) view.findViewById(R.id.loyalty_card_image);
+                    TextView companyNameView = (TextView) view.findViewById(R.id.company_name);
+                    TextView loyaltyPointsView = (TextView) view.findViewById(R.id.loyalty_points);
+
+                    final String id = item.getObjectId();
+
+                    final String companyName = item.getCompanyName();
+                    final int loyaltyPoints = item.getLoyaltyPoints();
+
+                    companyNameView.setText(companyName);
+                    loyaltyPointsView.setText(loyaltyPoints);
+                    return view;
+                }
+            };
+
+            // Disable automatic loading when the adapter is attached to a view.
+            mAdapter.setAutoload(false);
+
+            // Disable pagination, we'll manage the query limit ourselves
+            mAdapter.setPaginationEnabled(false);
+
+        }
+        else if (MODE_CARD_TYPES.equals(mMode)) {
+            ParseQueryAdapter.QueryFactory<LoyaltyCardType> factory =
+                    new ParseQueryAdapter.QueryFactory<LoyaltyCardType>() {
+                        public ParseQuery<LoyaltyCardType> create() {
+                            ParseQuery<LoyaltyCardType> query = LoyaltyCardType.getQuery();
+                            query.orderByDescending("createdAt");
+                            ParseUser currentUser = ParseUser.getCurrentUser();
+                            List<String> locations = (List<String>) currentUser.get(LoyaltyConstants.KEY_CUSTOMER_LOCATIONS);
+                            String location = "";
+                            if (!locations.isEmpty()) {
+                                location = locations.get(0);
+                            }
+                            query.whereContains(LoyaltyConstants.KEY_CARD_LOCATION,location);
+                            query.setLimit(MAX_LOYALTY_CARD_RESULTS);
+                            return query;
+                        }
+                    };
+
+            // Set up the query adapter
+            mAdapter = new ParseQueryAdapter<LoyaltyCardType>(this, factory) {
+                @Override
+                public View getItemView(LoyaltyCardType item, View view, ViewGroup parent) {
+                    if (view == null) {
+                        view = View.inflate(getContext(), R.layout.loyalty_card_type_view_item, null);
+                    }
+                    ImageView imageView = (ImageView) view.findViewById(R.id.loyalty_card_type_image);
+                    TextView cardNameView = (TextView) view.findViewById(R.id.card_type_name);
+                    TextView cardLocationView = (TextView) view.findViewById(R.id.card_type_location);
+
+                    cardNameView.setText(item.getCardName());
+                    cardLocationView.setText(item.getCardLocations().toString());
+                    return view;
+                }
+            };
+
+            // Disable automatic loading when the adapter is attached to a view.
+            mAdapter.setAutoload(false);
+
+            // Disable pagination, we'll manage the query limit ourselves
+            mAdapter.setPaginationEnabled(false);
+
+        }
+        else if (MODE_CARD_PURCHASES.equals(mMode)) {
+            ParseQueryAdapter.QueryFactory<LoyaltyCardPurchases> factory =
+                    new ParseQueryAdapter.QueryFactory<LoyaltyCardPurchases>() {
+                        public ParseQuery<LoyaltyCardPurchases> create() {
+                            ParseQuery<LoyaltyCardPurchases> query = LoyaltyCardPurchases.getQuery();
+                            query.include(LoyaltyConstants.KEY_USER);
+                            query.orderByDescending("createdAt");
+                            ParseUser currentUser = ParseUser.getCurrentUser();
+                            query.whereEqualTo(LoyaltyConstants.KEY_USER, currentUser);
+                            query.setLimit(MAX_LOYALTY_CARD_RESULTS);
+                            return query;
+                        }
+                    };
+
+            // Set up the query adapter
+            mAdapter = new ParseQueryAdapter<LoyaltyCardPurchases>(this, factory) {
+                @Override
+                public View getItemView(LoyaltyCardPurchases item, View view, ViewGroup parent) {
+                    if (view == null) {
+                        view = View.inflate(getContext(), R.layout.loyalty_purchase_item, null);
+                    }
+                    ImageView imageView = (ImageView) view.findViewById(R.id.purchase_company_image);
+                    TextView purchaseAmount = (TextView) view.findViewById(R.id.purchase_amount);
+                    TextView purchaseDate = (TextView) view.findViewById(R.id.purchase_date);
+
+                    purchaseAmount.setText(item.getPurchaseAmount() + item.getPurchaseCurrency());
+                    Date date = new Date(item.getPurchaseTime());
+                    purchaseDate.setText(date.toString());
+                    return view;
+                }
+            };
+
+            // Disable automatic loading when the adapter is attached to a view.
+            mAdapter.setAutoload(false);
+
+            // Disable pagination, we'll manage the query limit ourselves
+            mAdapter.setPaginationEnabled(false);
+
+        }
+        else if (MODE_CARD_PROMOTIONS.equals(mMode)) {
+            ParseQueryAdapter.QueryFactory<LoyaltyPromotionsAndDeals> factory =
+                    new ParseQueryAdapter.QueryFactory<LoyaltyPromotionsAndDeals>() {
+                        public ParseQuery<LoyaltyPromotionsAndDeals> create() {
+                            ParseQuery<LoyaltyPromotionsAndDeals> query = LoyaltyPromotionsAndDeals.getQuery();
+                            query.include(LoyaltyConstants.KEY_USER);
+                            query.orderByDescending("createdAt");
+                            ParseUser currentUser = ParseUser.getCurrentUser();
+                            List<String> locations = (List<String>) currentUser.get(LoyaltyConstants.KEY_CUSTOMER_LOCATIONS);
+                            String location = "";
+                            if (!locations.isEmpty()) {
+                                location = locations.get(0);
+                            }
+                            query.whereContains(LoyaltyConstants.KEY_CARD_LOCATION,location);
+                            query.setLimit(MAX_LOYALTY_CARD_RESULTS);
+                            return query;
+                        }
+                    };
+
+            // Set up the query adapter
+            mAdapter = new ParseQueryAdapter<LoyaltyPromotionsAndDeals>(this, factory) {
+                @Override
+                public View getItemView(LoyaltyPromotionsAndDeals item, View view, ViewGroup parent) {
+                    if (view == null) {
+                        view = View.inflate(getContext(), R.layout.loyalty_promotion_item, null);
+                    }
+                    ImageView imageView = (ImageView) view.findViewById(R.id.loyalty_promotion_image);
+                    TextView promotionNameView = (TextView) view.findViewById(R.id.promotion_item_name);
+                    TextView promotionLocationView = (TextView) view.findViewById(R.id.promotion_item_location);
+
+                    promotionNameView.setText(item.getPromotionName());
+                    promotionLocationView.setText(item.getPromotionLocations().toString());
+                    return view;
+                }
+            };
+
+            // Disable automatic loading when the adapter is attached to a view.
+            mAdapter.setAutoload(false);
+
+            // Disable pagination, we'll manage the query limit ourselves
+            mAdapter.setPaginationEnabled(false);
+
         }
     }
 
@@ -189,10 +335,10 @@ public class CustomerMainActivity extends FragmentActivity {
     }
 
     private void doListQuery() {
-        postsQueryAdapter.loadObjects();
+        mAdapter.loadObjects();
     }
 
-    private void handleItemClick (LoyaltyCardItem item) {
+    private void handleItemClick (ParseObject item) {
 
     }
 
@@ -307,5 +453,11 @@ public class CustomerMainActivity extends FragmentActivity {
             this.iconId = iconId;
         }
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(MODE, mMode);
     }
 }

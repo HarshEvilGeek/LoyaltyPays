@@ -31,7 +31,9 @@ public class LoyaltyConstants {
     public static final String VALUE_CUSTOMER_GENDER_MALE = "Male";
     public static final String VALUE_CUSTOMER_GENDER_FEMALE = "Female";
 
+
     // loyalty item constants
+    public static final String KEY_CARD_NAME = "cardName";
     public static final String KEY_EXPIRY_TIME = "expiryTime";
     public static final String KEY_LOYALTY_POINTS = "loyaltyPoints";
     public static final String KEY_LOYALTY_CARD_ID = "loyaltyCardId";
@@ -40,6 +42,7 @@ public class LoyaltyConstants {
     public static final String KEY_CARD_TERMS = "cardTerms";
 
     // promotions and discounts constants
+    public static final String KEY_PROMOTION_NAME = "promotionName";
     public static final String KEY_PROMOTION_LOCATIONS = "promotionLocations";
     public static final String KEY_PROMOTION_TEXT = "promotionText";
     public static final String KEY_PROMOTION_IMAGE = "promotionImage";

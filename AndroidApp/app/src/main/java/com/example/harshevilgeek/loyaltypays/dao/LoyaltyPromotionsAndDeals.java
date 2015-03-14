@@ -30,6 +30,14 @@ public class LoyaltyPromotionsAndDeals extends ParseObject {
         put(LoyaltyConstants.KEY_CUSTOMER_ID, customerId);
     }
 
+    public String getPromotionName() {
+        return getString(LoyaltyConstants.KEY_PROMOTION_NAME);
+    }
+
+    public void setPromotionName(String promotionName) {
+        put(LoyaltyConstants.KEY_PROMOTION_NAME, promotionName);
+    }
+
     public String getPromotionText() {
         return getString(LoyaltyConstants.KEY_PROMOTION_TEXT);
     }

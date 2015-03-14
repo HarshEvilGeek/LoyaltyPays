@@ -39,64 +39,106 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="CustomerMainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/CustomerMainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3132" max-vertical-offset="6825">
+              <caret line="278" column="91" selection-start-line="278" selection-start-column="91" selection-end-line="278" selection-end-column="91" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3281#3547#0" expanded="true" />
+                <element signature="e#3536#3537#0" expanded="true" />
+                <element signature="e#4528#5209#0" expanded="true" />
+                <element signature="e#5186#5187#0" expanded="true" />
+                <element signature="e#6686#7626#0" expanded="true" />
+                <element signature="e#7603#7604#0" expanded="true" />
+                <element signature="e#8952#9653#0" expanded="true" />
+                <element signature="e#9630#9631#0" expanded="true" />
+                <element signature="e#11062#12112#0" expanded="true" />
+                <element signature="e#12089#12090#0" expanded="true" />
+                <element signature="e#13940#14004#0" expanded="true" />
+                <element signature="e#14102#14157#0" expanded="true" />
+                <element signature="e#14248#14305#0" expanded="true" />
+                <element signature="e#14402#14469#0" expanded="true" />
+                <element signature="e#14566#14616#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RetailerMainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/RetailerMainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1539" max-vertical-offset="3165">
+              <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5595#5925#0" expanded="true" />
+                <element signature="e#5914#5915#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="RetailerPostActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/RetailerPostActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33238637" vertical-offset="1698" max-vertical-offset="2580">
-              <caret line="121" column="50" selection-start-line="121" selection-start-column="50" selection-end-line="121" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.6111111" vertical-offset="1719" max-vertical-offset="2445">
+              <caret line="136" column="9" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2091#2099#0" expanded="true" />
-                <element signature="e#2709#2710#0" expanded="true" />
-                <element signature="e#2763#2764#0" expanded="true" />
-                <element signature="e#2876#2994#0" expanded="true" />
-                <element signature="e#2983#2984#0" expanded="true" />
-                <element signature="e#3537#3571#0" expanded="true" />
                 <element signature="e#3922#3930#0" expanded="true" />
-                <element signature="e#4425#4471#0" expanded="true" />
-                <element signature="e#5219#5394#0" expanded="true" />
-                <element signature="e#5383#5384#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <file leaf-file-name="LoyaltyPromotionsAndDeals.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyPromotionsAndDeals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="1050">
-              <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-              <folding>
-                <element signature="e#720#738#0" expanded="true" />
-                <element signature="e#878#896#0" expanded="true" />
-                <element signature="e#1056#1074#0" expanded="true" />
-                <element signature="e#1412#1442#0" expanded="true" />
-                <element signature="e#1597#1628#0" expanded="true" />
-                <element signature="e#2112#2130#0" expanded="true" />
-                <element signature="e#2287#2320#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.72549" vertical-offset="221" max-vertical-offset="990">
-              <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="870">
+              <caret line="14" column="38" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_retailer_main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_retailer_main.xml">
+      <file leaf-file-name="LoyaltyCardItem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.888889" vertical-offset="99" max-vertical-offset="780">
-              <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1380">
+              <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoyaltyCardPurchases.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardPurchases.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="1440">
+              <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
               <folding>
-                <element signature="e#1394#1423#0" expanded="true" />
+                <element signature="e#469#470#0" expanded="true" />
+                <element signature="e#535#536#0" expanded="true" />
+                <element signature="e#803#804#0" expanded="true" />
+                <element signature="e#866#867#0" expanded="true" />
+                <element signature="e#2102#2103#0" expanded="true" />
+                <element signature="e#2167#2168#0" expanded="true" />
+                <element signature="e#2579#2580#0" expanded="true" />
+                <element signature="e#2650#2651#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loyalty_card_type_item.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/loyalty_card_type_item.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.888889" vertical-offset="264" max-vertical-offset="615">
+              <caret line="30" column="47" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
           <provider editor-type-id="android-designer">
@@ -104,21 +146,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_retailer_post.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_retailer_post.xml">
+      <file leaf-file-name="loyalty_purchase_item.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/loyalty_purchase_item.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.222221" vertical-offset="0" max-vertical-offset="915">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding>
-                <element signature="e#511#530#0" expanded="true" />
-                <element signature="e#965#988#0" expanded="true" />
-                <element signature="e#1302#1322#0" expanded="true" />
-                <element signature="e#1576#1602#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-16.666666" vertical-offset="0" max-vertical-offset="615">
+              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
           <provider editor-type-id="android-designer">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoyaltyCardType.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.076923" vertical-offset="393" max-vertical-offset="930">
+              <caret line="50" column="57" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="57" />
+              <folding>
+                <element signature="e#458#459#0" expanded="true" />
+                <element signature="e#523#524#0" expanded="true" />
+                <element signature="e#573#574#0" expanded="true" />
+                <element signature="e#636#637#0" expanded="true" />
+                <element signature="e#1357#1358#0" expanded="true" />
+                <element signature="e#1423#1424#0" expanded="true" />
+                <element signature="e#1708#1709#0" expanded="true" />
+                <element signature="e#1771#1772#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoyaltyConstants.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/constants/LoyaltyConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="519" max-vertical-offset="1140">
+              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -833,7 +899,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_retalier_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/SignUpActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyPromotionsAndDiscounts.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardPurchases.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyFeedback.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyUser.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
@@ -843,20 +908,27 @@
         <option value="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardTypes.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/Application.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/constants/LoyaltyConstants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyPromotionsAndDeals.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyDiscountsAndCoupons.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/CustomerMainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/loyalty_card_type_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/RetailerMainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardType.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/DispatchActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_retailer_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_retailer_post.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/adapters/LoyaltyCardItemAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/loyalty_card_type.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/loyalty_purchase_type.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/loyalty_purchase_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/loyalty_card_type_view_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardPurchases.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/loyalty_promotion_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardType.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/constants/LoyaltyConstants.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyPromotionsAndDeals.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/CustomerMainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/RetailerPostActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/RetailerMainActivity.java" />
       </list>
     </option>
   </component>
@@ -971,36 +1043,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1149,40 +1191,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="loyaltypays" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="constants" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -1234,6 +1242,10 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="048ebbd4437dfdc4" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD_for_Nexus_4" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -1504,32 +1516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardPurchases.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1590">
-          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#441#442#0" expanded="false" />
-            <element signature="e#507#508#0" expanded="false" />
-            <element signature="e#660#661#0" expanded="false" />
-            <element signature="e#725#726#0" expanded="false" />
-            <element signature="e#441#442#0" expanded="false" />
-            <element signature="e#507#508#0" expanded="false" />
-            <element signature="e#775#776#0" expanded="false" />
-            <element signature="e#838#839#0" expanded="false" />
-            <element signature="e#1097#1098#0" expanded="false" />
-            <element signature="e#1165#1166#0" expanded="false" />
-            <element signature="e#1328#1329#0" expanded="false" />
-            <element signature="e#1395#1396#0" expanded="false" />
-            <element signature="e#2074#2075#0" expanded="false" />
-            <element signature="e#2139#2140#0" expanded="false" />
-            <element signature="e#2551#2552#0" expanded="false" />
-            <element signature="e#2622#2623#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4674221" vertical-offset="0" max-vertical-offset="450">
@@ -1565,17 +1551,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/loyalty_card_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6666665" vertical-offset="234" max-vertical-offset="615">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.92" vertical-offset="547" max-vertical-offset="915">
@@ -1589,20 +1564,6 @@
         <state vertical-scroll-proportion="-5.52" vertical-offset="192" max-vertical-offset="585">
           <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyPromotionsAndDeals.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.72" vertical-offset="472" max-vertical-offset="930">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#450#451#0" expanded="false" />
-            <element signature="e#515#516#0" expanded="false" />
-            <element signature="e#565#566#0" expanded="false" />
-            <element signature="e#628#629#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1620,17 +1581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/loyalty_card_type_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.888889" vertical-offset="210" max-vertical-offset="615">
-          <caret line="30" column="47" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1182" max-vertical-offset="1725">
@@ -1641,80 +1591,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/CustomerMainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1920">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="47" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/RetailerMainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="3300">
-          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2006#2336#0" expanded="true" />
-            <element signature="e#2325#2326#0" expanded="true" />
-            <element signature="e#2423#3025#0" expanded="true" />
-            <element signature="e#3006#3007#0" expanded="true" />
-            <element signature="e#5469#5799#0" expanded="true" />
-            <element signature="e#5788#5789#0" expanded="true" />
-            <element signature="e#6126#6849#0" expanded="true" />
-            <element signature="e#6834#6835#0" expanded="true" />
-            <element signature="e#6896#7849#0" expanded="true" />
-            <element signature="e#7180#7225#0" expanded="true" />
-            <element signature="e#7464#7815#0" expanded="true" />
-            <element signature="e#7792#7793#0" expanded="true" />
-            <element signature="e#7834#7835#0" expanded="true" />
-            <element signature="e#8320#8567#0" expanded="true" />
-            <element signature="e#8556#8557#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/constants/LoyaltyConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1095">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="957" max-vertical-offset="1380">
-          <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="567" max-vertical-offset="1035">
-          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#458#459#0" expanded="false" />
-            <element signature="e#523#524#0" expanded="false" />
-            <element signature="e#573#574#0" expanded="false" />
-            <element signature="e#636#637#0" expanded="false" />
-            <element signature="e#458#459#0" expanded="false" />
-            <element signature="e#523#524#0" expanded="false" />
-            <element signature="e#1152#1153#0" expanded="false" />
-            <element signature="e#1222#1223#0" expanded="false" />
-            <element signature="e#1520#1521#0" expanded="false" />
-            <element signature="e#1583#1584#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1760,8 +1641,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.72549" vertical-offset="221" max-vertical-offset="990">
-          <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+        <state vertical-scroll-proportion="-2.72549" vertical-offset="281" max-vertical-offset="1050">
+          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1779,22 +1660,164 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/loyalty_card_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.4444447" vertical-offset="234" max-vertical-offset="615">
+          <caret line="29" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/loyalty_card_type_view_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="615">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/loyalty_card_type_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.888889" vertical-offset="264" max-vertical-offset="615">
+          <caret line="30" column="47" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardPurchases.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="1440">
+          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+          <folding>
+            <element signature="e#469#470#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#866#867#0" expanded="true" />
+            <element signature="e#2102#2103#0" expanded="true" />
+            <element signature="e#2167#2168#0" expanded="true" />
+            <element signature="e#2579#2580#0" expanded="true" />
+            <element signature="e#2650#2651#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/loyalty_promotion_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.30769232" vertical-offset="270" max-vertical-offset="738">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/loyalty_purchase_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.666666" vertical-offset="0" max-vertical-offset="615">
+          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1380">
+          <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyPromotionsAndDeals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="870">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/CustomerMainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3132" max-vertical-offset="6825">
+          <caret line="278" column="91" selection-start-line="278" selection-start-column="91" selection-end-line="278" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3281#3547#0" expanded="true" />
+            <element signature="e#3536#3537#0" expanded="true" />
+            <element signature="e#4528#5209#0" expanded="true" />
+            <element signature="e#5186#5187#0" expanded="true" />
+            <element signature="e#6686#7626#0" expanded="true" />
+            <element signature="e#7603#7604#0" expanded="true" />
+            <element signature="e#8952#9653#0" expanded="true" />
+            <element signature="e#9630#9631#0" expanded="true" />
+            <element signature="e#11062#12112#0" expanded="true" />
+            <element signature="e#12089#12090#0" expanded="true" />
+            <element signature="e#13940#14004#0" expanded="true" />
+            <element signature="e#14102#14157#0" expanded="true" />
+            <element signature="e#14248#14305#0" expanded="true" />
+            <element signature="e#14402#14469#0" expanded="true" />
+            <element signature="e#14566#14616#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/constants/LoyaltyConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="519" max-vertical-offset="1140">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyCardType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.076923" vertical-offset="393" max-vertical-offset="930">
+          <caret line="50" column="57" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="57" />
+          <folding>
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#1357#1358#0" expanded="true" />
+            <element signature="e#1423#1424#0" expanded="true" />
+            <element signature="e#1708#1709#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/RetailerMainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1539" max-vertical-offset="3165">
+          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5595#5925#0" expanded="true" />
+            <element signature="e#5914#5915#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/RetailerPostActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33238637" vertical-offset="1698" max-vertical-offset="2580">
-          <caret line="121" column="50" selection-start-line="121" selection-start-column="50" selection-end-line="121" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.6111111" vertical-offset="1719" max-vertical-offset="2445">
+          <caret line="136" column="9" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2091#2099#0" expanded="true" />
-            <element signature="e#2709#2710#0" expanded="true" />
-            <element signature="e#2763#2764#0" expanded="true" />
-            <element signature="e#2876#2994#0" expanded="true" />
-            <element signature="e#2983#2984#0" expanded="true" />
-            <element signature="e#3537#3571#0" expanded="true" />
             <element signature="e#3922#3930#0" expanded="true" />
-            <element signature="e#4425#4471#0" expanded="true" />
-            <element signature="e#5219#5394#0" expanded="true" />
-            <element signature="e#5383#5384#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -5,6 +5,7 @@ import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.List;
 
@@ -96,5 +97,13 @@ public class LoyaltyCardPurchases extends ParseObject {
 
     public static ParseQuery<LoyaltyCardPurchases> getQuery() {
         return ParseQuery.getQuery(LoyaltyCardPurchases.class);
+    }
+
+    public ParseUser getUser() {
+        return getParseUser(LoyaltyConstants.KEY_USER);
+    }
+
+    public void setUser(ParseUser value) {
+        put(LoyaltyConstants.KEY_USER, value);
     }
 }
