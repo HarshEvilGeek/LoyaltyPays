@@ -62,6 +62,7 @@ public class CustomerMainActivity extends FragmentActivity {
         setContentView(R.layout.activity_customer_main);
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setIcon(R.drawable.home_icon);
         optionsDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerList = (ListView) findViewById(R.id.main_options_list);
 
@@ -120,7 +121,7 @@ public class CustomerMainActivity extends FragmentActivity {
                 handleItemClick(item);
             }
         });
-    }   
+    }
 
     private void populateData()
     {
@@ -173,6 +174,9 @@ public class CustomerMainActivity extends FragmentActivity {
         }
         else if(getResources().getString(R.string.option_view_registered_retailers).equals(optionName)) {
             return R.drawable.my_loyalty_cards;
+        }
+        else if(getResources().getString(R.string.option_my_deals).equals(optionName)) {
+            return R.drawable.my_deals;
         }
         return resId;
     }
