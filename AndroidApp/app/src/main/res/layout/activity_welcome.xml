@@ -42,4 +42,23 @@
         android:text="@string/slogan"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome_text"
+        android:orientation="vertical">
+
+        <RadioButton android:id="@+id/radio_customer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/radio_retailer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retailer"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+
 </RelativeLayout>
