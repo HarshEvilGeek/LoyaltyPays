@@ -71,12 +71,44 @@ public class LoyaltyCardItem extends ParseObject {
         put(LoyaltyConstants.KEY_CUSTOMER_IMAGE, customerImage);
     }
 
-    public List<String> getCustomerLocations() {
-        return getList(LoyaltyConstants.KEY_CUSTOMER_LOCATIONS);
+    public String getCardLocation() {
+        return getString(LoyaltyConstants.KEY_CARD_LOCATION);
     }
 
-    public void setCustomerLocations(List<String> customerLocations) {
-        put(LoyaltyConstants.KEY_CUSTOMER_LOCATIONS, customerLocations);
+    public void setCardLocation(String cardLocation) {
+        put(LoyaltyConstants.KEY_CARD_LOCATION, cardLocation);
+    }
+
+    public ParseFile getQRCode() {
+        return getParseFile(LoyaltyConstants.KEY_LOYALTY_QR_CODE);
+    }
+
+    public void setQRCode(ParseFile qrCode) {
+        put(LoyaltyConstants.KEY_LOYALTY_QR_CODE, qrCode);
+    }
+
+    public String getLoyaltyCardId() {
+        return getString(LoyaltyConstants.KEY_LOYALTY_CARD_ID);
+    }
+
+    public void setLoyaltyCardId(String loyaltyCardId) {
+        put(LoyaltyConstants.KEY_LOYALTY_CARD_ID, loyaltyCardId);
+    }
+
+    public int getLoyaltyPoints() {
+        return getInt(LoyaltyConstants.KEY_LOYALTY_POINTS);
+    }
+
+    public void setLoyaltyPoints(int loyaltyPoints) {
+        put(LoyaltyConstants.KEY_LOYALTY_POINTS, loyaltyPoints);
+    }
+
+    public long getExpiryTime() {
+        return getInt(LoyaltyConstants.KEY_EXPIRY_TIME);
+    }
+
+    public void setExpiryTime(long expiryTime) {
+        put(LoyaltyConstants.KEY_EXPIRY_TIME, expiryTime);
     }
 
     public ParseUser getUser() {

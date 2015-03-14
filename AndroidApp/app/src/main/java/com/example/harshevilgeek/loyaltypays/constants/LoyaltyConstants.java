@@ -27,10 +27,20 @@ public class LoyaltyConstants {
     public static final String KEY_LOYALTY_POINTS = "loyaltyPoints";
     public static final String KEY_LOYALTY_CARD_ID = "companyName";
     public static final String KEY_LOYALTY_QR_CODE = "companyName";
-    public static final String KEY_LOCATION = "cardLocation";
+    public static final String KEY_CARD_LOCATION = "cardLocation";
 
     // promotions and discounts constants
     public static final String KEY_PROMOTION_LOCATION = "promotionLocation";
     public static final String KEY_PROMOTION_TEXT = "promotionText";
     public static final String KEY_PROMOTION_IMAGE = "promotionImage";
+
+    // purchases constants
+    public static final String KEY_PURCHASE_ID = "purchaseID";
+    public static final String KEY_PURCHASE_NAME = "purchaseName";
+    public static final String KEY_PURCHASE_LOCATION = "purchaseLocation";
+    public static final String KEY_PURCHASE_AMOUNT = "purchaseAmount";
+    public static final String KEY_PURCHASE_CURRENCY = "purchaseCurrency";
+    public static final String KEY_PURCHASE_DATE = "purchaseDate";
+    public static final String KEY_PURCHASE_IMAGE = "purchaseImage";
+    public static final String KEY_PURCHASE_BILL = "purchaseBill";
 }
