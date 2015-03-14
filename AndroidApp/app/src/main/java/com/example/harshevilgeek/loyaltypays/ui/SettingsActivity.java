@@ -18,8 +18,6 @@ import java.util.List;
  */
 public class SettingsActivity extends Activity {
 
-  private List<Float> availableOptions = Application.getConfigHelper().getSearchDistanceAvailableOptions();
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

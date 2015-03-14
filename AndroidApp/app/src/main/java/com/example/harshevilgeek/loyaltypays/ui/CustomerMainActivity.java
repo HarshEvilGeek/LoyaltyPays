@@ -100,8 +100,8 @@ public class CustomerMainActivity extends FragmentActivity {
                     timezoneCheckBox.setChecked(false);
                 }
 
-                final String name = post.getItemName();
-                final String timezone = post.getTimeZone();
+                final String name = post.getCustomerName();
+                final String timezone = post.getCardLocation();
 
                 nameView.setText(name);
                 timezoneView.setText(timezone);
@@ -139,7 +139,7 @@ public class CustomerMainActivity extends FragmentActivity {
         timeZoneListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final LoyaltyCardItem item = postsQueryAdapter.getItem(position);
-                selectedTimeZone = item.getTimeZone();
+                selectedTimeZone = item.getCardLocation();
             }
         });
     }

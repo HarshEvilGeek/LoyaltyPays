@@ -12,6 +12,14 @@ import java.util.List;
 @ParseClassName("LoyaltyCardPurchases")
 public class LoyaltyCardPurchases extends ParseObject {
 
+    public String getPurchaseId() {
+        return getString(LoyaltyConstants.KEY_PURCHASE_ID);
+    }
+
+    public void setPurchaseId(String purchaseId) {
+        put(LoyaltyConstants.KEY_PURCHASE_ID, purchaseId);
+    }
+
     public String getCompanyId() {
         return getString(LoyaltyConstants.KEY_COMPANY_ID);
     }
@@ -28,11 +36,27 @@ public class LoyaltyCardPurchases extends ParseObject {
         put(LoyaltyConstants.KEY_CUSTOMER_ID, customerId);
     }
 
+    public String getPurchaseName() {
+        return getString(LoyaltyConstants.KEY_PURCHASE_NAME);
+    }
+
+    public void setPurchaseName(String purchaseName) {
+        put(LoyaltyConstants.KEY_PURCHASE_NAME, purchaseName);
+    }
+
     public String getPurchaseLocation() {
-        return getString(LoyaltyConstants.KEY_CARD_LOCATION);
+        return getString(LoyaltyConstants.KEY_PURCHASE_LOCATION);
     }
 
     public void setPurchaseLocation(String purchaseLocation) {
-        put(LoyaltyConstants.KEY_CARD_LOCATION, purchaseLocation);
+        put(LoyaltyConstants.KEY_PURCHASE_LOCATION, purchaseLocation);
+    }
+
+    public String getPurchaseCurrency() {
+        return getString(LoyaltyConstants.KEY_PURCHASE_CURRENCY);
+    }
+
+    public void setPurchaseCurrency(String purchaseCurrency) {
+        put(LoyaltyConstants.KEY_PURCHASE_CURRENCY, purchaseCurrency);
     }
 }

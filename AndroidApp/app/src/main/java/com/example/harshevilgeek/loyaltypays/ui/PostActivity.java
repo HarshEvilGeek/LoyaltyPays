@@ -120,8 +120,8 @@ public class PostActivity extends Activity {
         if (EDIT_ITEM.equals(action)) {
             post.setObjectId(objectId);
         }
-        post.setItemName(name);
-        post.setTimeZone(timezone);
+        post.setCustomerName(name);
+        post.setCardLocation(timezone);
         post.setUser(ParseUser.getCurrentUser());
         ParseACL acl = new ParseACL();
 
