@@ -141,6 +141,8 @@ public class RegisterWithARetailerActivity  extends Activity{
         loyaltyCardItem.setCustomerName(userFullName);
         loyaltyCardItem.setCustomerId(user.getObjectId());
         loyaltyCardItem.setLoyaltyCardTypeId(loyaltyCardId);
+        loyaltyCardItem.setCompanyName(companyName);
+        loyaltyCardItem.setLoyaltyPoints(100);
         ParseACL acl = new ParseACL();
 
         // Give public read access
