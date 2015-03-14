@@ -8,10 +8,14 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +28,12 @@ import com.parse.SignUpCallback;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Activity which displays a login screen to the user.
@@ -37,6 +46,8 @@ public class SignUpActivity extends Activity {
     private EditText nameEditText;
     private EditText dobEditText;
     private RadioGroup genderRadioButtonGroup;
+    private Spinner countrySpinner;
+    private EditText locationsEditText;
     private String gender = "U";
     private String userType;
 
@@ -52,6 +63,8 @@ public class SignUpActivity extends Activity {
         dobEditText = (EditText)findViewById(R.id.dob_edit_text);
         genderRadioButtonGroup = (RadioGroup) findViewById(R.id.gender_radio);
         passwordEditText = (EditText) findViewById(R.id.password_edit_text);
+        countrySpinner = (Spinner) findViewById(R.id.country_spinner);
+        locationsEditText = (EditText) findViewById(R.id.locations_edit_text);
         passwordAgainEditText = (EditText) findViewById(R.id.password_again_edit_text);
         passwordAgainEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -83,12 +96,21 @@ public class SignUpActivity extends Activity {
             dobEditText.setVisibility(View.VISIBLE);
             genderRadioButtonGroup.setVisibility(View.VISIBLE);
             nameEditText.setHint("Customer Name");
+            countrySpinner.setVisibility(View.GONE);
+            locationsEditText.setVisibility(View.GONE);
 
         }
         else if(LoyaltyConstants.VALUE_CUSTOMER_TYPE_RETAILER.equals(userType)) {
             dobEditText.setVisibility(View.GONE);
             genderRadioButtonGroup.setVisibility(View.GONE);
             nameEditText.setHint("Company Name");
+            countrySpinner.setVisibility(View.VISIBLE);
+            locationsEditText.setVisibility(View.VISIBLE);
+            locationsEditText.setEnabled(false);
+            locationsEditText.setText("");
+            countrySpinner.setOnItemSelectedListener(new CountrySpinnerListener());
+
+
         }
     }
 
@@ -174,17 +196,15 @@ public class SignUpActivity extends Activity {
         String password = passwordEditText.getText().toString().trim();
         String dob = dobEditText.getText().toString().trim();
         String name = nameEditText.getText().toString().trim();
-        String[] emailParts = email.split("@");
 
         // Set up a new Parse user
         LoyaltyUser user = new LoyaltyUser();
-        user.setUsername(emailParts[0]);
+        user.setUsername(email);
         user.setPassword(password);
         user.setUserType(LoyaltyConstants.VALUE_CUSTOMER_TYPE_CONSUMER);
         user.setCustomerName(name);
         user.setCustomerDOB(dob);
         user.setCustomerGender(gender);
-        user.setEmail(email);
         signUp(user);
 
     }
@@ -194,15 +214,20 @@ public class SignUpActivity extends Activity {
         String email = usernameEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
         String name = nameEditText.getText().toString().trim();
-        String[] emailParts = email.split("@");
+        String locations = locationsEditText.getText().toString().trim();
+        if(locations.endsWith(",")) {
+            locations = locations.substring(0, locations.length() - 1);
+        }
+
+        String[] locationsArray = locations.split(",");
 
         // Set up a new Parse user
         LoyaltyUser user = new LoyaltyUser();
         user.setCompanyName(name);
         user.setPassword(password);
-        user.setUsername(emailParts[0]);
+        user.setUsername(email);
+        user.setCompanyLocations(Arrays.asList(locationsArray));
         user.setUserType(LoyaltyConstants.VALUE_CUSTOMER_TYPE_RETAILER);
-        user.setEmail(email);
         signUp(user);
     }
 
@@ -213,14 +238,31 @@ public class SignUpActivity extends Activity {
         switch(view.getId()) {
             case R.id.radio_male:
                 if (checked)
-                    gender = "M";
+                    gender = LoyaltyConstants.VALUE_CUSTOMER_GENDER_MALE;
                 break;
             case R.id.radio_female:
                 if (checked)
-                    gender = "F";
+                    gender = LoyaltyConstants.VALUE_CUSTOMER_GENDER_FEMALE;
                 break;
             default:
                 gender = "U";
         }
     }
-}
+
+    private class CountrySpinnerListener implements AdapterView.OnItemSelectedListener {
+
+        public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
+            locationsEditText.setEnabled(true);
+            String location = parent.getItemAtPosition(pos).toString();
+            StringBuilder locationString = new StringBuilder(locationsEditText.getText().toString().trim());
+            locationString.append(location).append(",");
+            locationsEditText.setText(locationString);
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> arg0) {
+            locationsEditText.setEnabled(false);
+        }
+    }
+
+ }

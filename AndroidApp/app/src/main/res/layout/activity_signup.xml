@@ -61,6 +61,24 @@
                 android:singleLine="true"
                 android:visibility="gone"/>
 
+            <EditText
+                android:id="@+id/locations_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Country:City..."
+                android:maxLines="1"
+                android:singleLine="true"
+                android:visibility="gone"/>
+
+
+            <Spinner
+                android:id="@+id/country_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/country_array"
+                android:visibility="gone"/>
+
+
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/gender_radio"
                 android:layout_width="fill_parent"
