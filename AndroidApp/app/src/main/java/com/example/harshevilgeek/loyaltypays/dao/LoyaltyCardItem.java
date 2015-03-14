@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Data model for a Loyalty Cards.
  */
-@ParseClassName("LoyaltyCards")
+@ParseClassName("LoyaltyCardItem")
 public class LoyaltyCardItem extends ParseObject {
 
     public String getCompanyId() {
@@ -101,6 +101,14 @@ public class LoyaltyCardItem extends ParseObject {
 
     public void setExpiryTime(long expiryTime) {
         put(LoyaltyConstants.KEY_EXPIRY_TIME, expiryTime);
+    }
+
+    public String getCardTerms() {
+        return getString(LoyaltyConstants.KEY_CARD_TERMS);
+    }
+
+    public void setCardTerms(String cardTerms) {
+        put(LoyaltyConstants.KEY_CARD_TERMS, cardTerms);
     }
 
     public ParseUser getUser() {

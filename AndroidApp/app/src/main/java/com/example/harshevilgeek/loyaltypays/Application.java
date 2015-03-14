@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardItem;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardPurchases;
+import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardTypes;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyDiscountsAndCoupons;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyFeedback;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyPromotionsAndDeals;
@@ -31,6 +32,7 @@ public class Application extends android.app.Application {
 
         ParseUser.registerSubclass(LoyaltyUser.class);
         ParseObject.registerSubclass(LoyaltyCardItem.class);
+        ParseObject.registerSubclass(LoyaltyCardTypes.class);
         ParseObject.registerSubclass(LoyaltyCardPurchases.class);
         ParseObject.registerSubclass(LoyaltyDiscountsAndCoupons.class);
         ParseObject.registerSubclass(LoyaltyFeedback.class);
