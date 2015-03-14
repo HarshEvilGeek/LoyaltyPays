@@ -18,8 +18,9 @@ public class LoyaltyConstants {
 
     // user constants
     public static final String KEY_USER_TYPE = "userType";
-    public static final String KEY_CUSTOMER_AGE_GROUP = "userType";
-    public static final String KEY_CUSTOMER_GENDER = "userType";
+    public static final String KEY_CUSTOMER_AGE_GROUP = "customerAgeGroup";
+    public static final String KEY_CUSTOMER_GENDER = "customerGender";
+    public static final String KEY_CUSTOMER_DOB = "customerDateOfBirth";
 
     public static final String VALUE_CUSTOMER_TYPE_CONSUMER = "consumer";
     public static final String VALUE_CUSTOMER_TYPE_RETAILER = "retailer";
@@ -33,8 +34,8 @@ public class LoyaltyConstants {
     // loyalty item constants
     public static final String KEY_EXPIRY_TIME = "expiryTime";
     public static final String KEY_LOYALTY_POINTS = "loyaltyPoints";
-    public static final String KEY_LOYALTY_CARD_ID = "companyName";
-    public static final String KEY_LOYALTY_QR_CODE = "companyName";
+    public static final String KEY_LOYALTY_CARD_ID = "loyaltyCardId";
+    public static final String KEY_LOYALTY_QR_CODE = "loyaltyQRCode";
     public static final String KEY_CARD_LOCATION = "cardLocation";
 
     // promotions and discounts constants

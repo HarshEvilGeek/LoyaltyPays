@@ -105,4 +105,12 @@ public class LoyaltyUser extends ParseUser {
     public void setCustomerGender(String customerGender) {
         put(LoyaltyConstants.KEY_CUSTOMER_GENDER, customerGender);
     }
+
+    public String getCustomerDOB() {
+        return getString(LoyaltyConstants.KEY_CUSTOMER_DOB);
+    }
+
+    public void setCustomerDOB(String customerDOB) {
+        put(LoyaltyConstants.KEY_CUSTOMER_DOB, customerDOB);
+    }
 }
