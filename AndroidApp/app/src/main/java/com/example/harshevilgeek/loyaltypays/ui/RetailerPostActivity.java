@@ -135,7 +135,7 @@ public class RetailerPostActivity extends Activity {
         if (EDIT_ITEM.equals(action)) {
             loyaltyCardType.setObjectId(objectId);
         }
-        loyaltyCardType.setCompanyName(name);
+        loyaltyCardType.setCardName(name);
         loyaltyCardType.setCardLocations(locationList);
         loyaltyCardType.setCardTerms(terms);
         loyaltyCardType.setUser(ParseUser.getCurrentUser());

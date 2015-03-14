@@ -119,7 +119,7 @@ public class CustomerMainActivity extends FragmentActivity {
                 mode = MODE_CARD_ITEMS;
             }
             else if(position == 1) {
-                mode = MODE_CARD_ITEMS;
+                mode = MODE_CARD_TYPES;
             }
             else if(position == 2) {
                 mode = MODE_CARD_PROMOTIONS;
@@ -127,7 +127,7 @@ public class CustomerMainActivity extends FragmentActivity {
             else if(position == 3) {
                 mode = MODE_CARD_PURCHASES;
             }
-           Intent activityIntent = new Intent(context, CustomerMainActivity.class );
+            Intent activityIntent = new Intent(context, CustomerMainActivity.class );
             activityIntent.putExtra(MODE, mode);
             context.startActivity(activityIntent);
         }
@@ -205,13 +205,13 @@ public class CustomerMainActivity extends FragmentActivity {
                         public ParseQuery<LoyaltyCardType> create() {
                             ParseQuery<LoyaltyCardType> query = LoyaltyCardType.getQuery();
                             query.orderByDescending("createdAt");
-                            ParseUser currentUser = ParseUser.getCurrentUser();
-                            List<String> locations = (List<String>) currentUser.get(LoyaltyConstants.KEY_CUSTOMER_LOCATIONS);
-                            String location = "";
-                            if (!locations.isEmpty()) {
-                                location = locations.get(0);
-                            }
-                            query.whereContains(LoyaltyConstants.KEY_CARD_LOCATION,location);
+                            //ParseUser currentUser = ParseUser.getCurrentUser();
+                            //List<String> locations = (List<String>) currentUser.get(LoyaltyConstants.KEY_CUSTOMER_LOCATIONS);
+                            //String location = "";
+                            //if (!locations.isEmpty()) {
+                                //location = locations.get(0);
+                            //}
+                            //query.whereContains(LoyaltyConstants.KEY_CARD_LOCATION,location);
                             query.setLimit(MAX_LOYALTY_CARD_RESULTS);
                             return query;
                         }
@@ -225,11 +225,16 @@ public class CustomerMainActivity extends FragmentActivity {
                         view = View.inflate(getContext(), R.layout.customer_loyalty_card_type_item, null);
                     }
                     ImageView imageView = (ImageView) view.findViewById(R.id.loyalty_card_type_image);
-                    TextView cardNameView = (TextView) view.findViewById(R.id.card_type_name);
-                    TextView cardLocationView = (TextView) view.findViewById(R.id.card_type_location);
+                    TextView cardNameView = (TextView) view.findViewById(R.id.card_type_item_name);
+                    TextView cardLocationView = (TextView) view.findViewById(R.id.card_type_item_location);
 
                     cardNameView.setText(item.getCardName());
-                    cardLocationView.setText(item.getCardLocations().toString());
+                    try {
+                        cardLocationView.setText(item.getCardLocations().toString());
+                    }
+                    catch (Exception e) {
+
+                    }
                     return view;
                 }
             };
