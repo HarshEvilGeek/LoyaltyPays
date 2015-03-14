@@ -13,6 +13,7 @@
     <string name="progress_posting_card_type">Posting&#8230;</string>
 
     <string name="post_retailer_label">Update Loyalty Details</string>
+    <string name="post_purchase_label">Add a Purchase</string>
 
     <string name="edit_loyalty_card">Edit</string>
     <string name="delete_loyalty_card">Delete</string>
@@ -26,6 +27,10 @@
     <string name="name_post">Name</string>
     <string name="location_post">Location (Country:City)</string>
     <string name="terms_post">Terms and Conditions</string>
+
+    <string name="purchase_card_id">Card id</string>
+    <string name="purchase_item">Item being purchased</string>
+    <string name="purchase_amount_hint">Amount</string>
 
     <string name="parse_application_id">SMtBgErC8ttG0s38g9agFUcfxOT7ywzNhCeHrE5j</string>
     <string name="parse_client_key">l7KmzIae6DFJ2tGfcgV7convA5iyvs0OsXU4yimb</string>

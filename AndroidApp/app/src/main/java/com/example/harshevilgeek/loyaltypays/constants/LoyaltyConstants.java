@@ -53,6 +53,7 @@ public class LoyaltyConstants {
     public static final String KEY_PURCHASE_NAME = "purchaseName";
     public static final String KEY_PURCHASE_LOCATION = "purchaseLocation";
     public static final String KEY_PURCHASE_AMOUNT = "purchaseAmount";
+    public static final String KEY_PURCHASE_CARD_ID = "purchaseCardId";
     public static final String KEY_PURCHASE_CURRENCY = "purchaseCurrency";
     public static final String KEY_PURCHASE_TIME = "purchaseTime";
     public static final String KEY_PURCHASE_IMAGE = "purchaseImage";

@@ -71,6 +71,14 @@ public class LoyaltyCardPurchases extends ParseObject {
         put(LoyaltyConstants.KEY_PURCHASE_CURRENCY, purchaseCurrency);
     }
 
+    public String getPurchaseCardID() {
+        return getString(LoyaltyConstants.KEY_PURCHASE_CARD_ID);
+    }
+
+    public void setPurchaseCardID(String purchaseCardID) {
+        put(LoyaltyConstants.KEY_PURCHASE_CARD_ID, purchaseCardID);
+    }
+
     public long getPurchaseTime() {
         return getInt(LoyaltyConstants.KEY_PURCHASE_TIME);
     }

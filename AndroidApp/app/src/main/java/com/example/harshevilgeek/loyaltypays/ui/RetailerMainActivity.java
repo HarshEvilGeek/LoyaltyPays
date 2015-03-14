@@ -37,6 +37,7 @@ public class RetailerMainActivity extends FragmentActivity {
 
     private ListView loyaltyCardTypeListView;
     private Button addNewButton;
+    private Button addPurchaseButton;
 
     private Button editButton;
     private Button deleteButton;
@@ -54,6 +55,7 @@ public class RetailerMainActivity extends FragmentActivity {
 
         loyaltyCardTypeListView = (ListView) findViewById(R.id.loyalty_card_type_list_view);
         addNewButton = (Button) findViewById(R.id.add_new_button);
+        addPurchaseButton = (Button) findViewById(R.id.add_purchase_button);
 
         modifyLayout = (LinearLayout) findViewById(R.id.modify_layout);
         editButton = (Button) findViewById(R.id.edit_button);
@@ -64,6 +66,12 @@ public class RetailerMainActivity extends FragmentActivity {
 
                 Intent intent = new Intent(RetailerMainActivity.this, RetailerPostActivity.class);
                 intent.putExtra(RetailerPostActivity.ACTION, RetailerPostActivity.ADD_NEW_ITEM);
+                startActivity(intent);
+            }
+        });
+        addPurchaseButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(RetailerMainActivity.this, RetailerPurchasePostActivity.class);
                 startActivity(intent);
             }
         });
