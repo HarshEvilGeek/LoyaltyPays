@@ -5,17 +5,19 @@ package com.example.harshevilgeek.loyaltypays.constants;
  */
 public class LoyaltyConstants {
 
-    // foreign keys
+    // user keys and foreign keys
     public static final String KEY_USER = "user";
     public static final String KEY_COMPANY_ID = "companyID";
     public static final String KEY_COMPANY_NAME = "companyName";
     public static final String KEY_COMPANY_IMAGE = "companyImage";
     public static final String KEY_COMPANY_LOCATIONS = "companyLocations";
+    public static final String KEY_CUSTOMER_NAME = "customerName";
+    public static final String KEY_CUSTOMER_ID = "customerId";
+    public static final String KEY_CUSTOMER_IMAGE = "customerImage";
+    public static final String KEY_CUSTOMER_LOCATIONS = "customerLocations";
 
     // user constants
     public static final String KEY_USER_TYPE = "userType";
-    public static final String KEY_CUSTOMER_ID = "customerId";
-    public static final String KEY_CUSTOMER_IMAGE = "customerImage";
 
     public static final String VALUE_USER_TYPE_CONSUMER = "consumer";
     public static final String VALUE_USER_TYPE_RETAILER = "retailer";
