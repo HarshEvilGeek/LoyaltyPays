@@ -2,6 +2,7 @@ package com.example.harshevilgeek.loyaltypays.dao;
 
 import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
 import com.parse.ParseClassName;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 
 import java.util.List;
@@ -44,6 +45,14 @@ public class LoyaltyCardPurchases extends ParseObject {
         put(LoyaltyConstants.KEY_PURCHASE_NAME, purchaseName);
     }
 
+    public int getPurchaseAmount() {
+        return getInt(LoyaltyConstants.KEY_PURCHASE_AMOUNT);
+    }
+
+    public void setPurchaseAmount(int purchaseAmount) {
+        put(LoyaltyConstants.KEY_PURCHASE_AMOUNT, purchaseAmount);
+    }
+
     public String getPurchaseLocation() {
         return getString(LoyaltyConstants.KEY_PURCHASE_LOCATION);
     }
@@ -58,5 +67,29 @@ public class LoyaltyCardPurchases extends ParseObject {
 
     public void setPurchaseCurrency(String purchaseCurrency) {
         put(LoyaltyConstants.KEY_PURCHASE_CURRENCY, purchaseCurrency);
+    }
+
+    public long getPurchaseTime() {
+        return getInt(LoyaltyConstants.KEY_PURCHASE_TIME);
+    }
+
+    public void setPurchaseTime(long purchaseTime) {
+        put(LoyaltyConstants.KEY_PURCHASE_TIME, purchaseTime);
+    }
+
+    public ParseFile getPurchaseImage() {
+        return getParseFile(LoyaltyConstants.KEY_PURCHASE_IMAGE);
+    }
+
+    public void setPurchaseImage(ParseFile purchaseImage) {
+        put(LoyaltyConstants.KEY_PURCHASE_IMAGE, purchaseImage);
+    }
+
+    public ParseFile getPurchaseBill() {
+        return getParseFile(LoyaltyConstants.KEY_PURCHASE_BILL);
+    }
+
+    public void setPurchaseBill(ParseFile purchaseBill) {
+        put(LoyaltyConstants.KEY_PURCHASE_BILL, purchaseBill);
     }
 }

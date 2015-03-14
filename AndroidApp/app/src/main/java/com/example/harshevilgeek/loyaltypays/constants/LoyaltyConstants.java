@@ -40,7 +40,17 @@ public class LoyaltyConstants {
     public static final String KEY_PURCHASE_LOCATION = "purchaseLocation";
     public static final String KEY_PURCHASE_AMOUNT = "purchaseAmount";
     public static final String KEY_PURCHASE_CURRENCY = "purchaseCurrency";
-    public static final String KEY_PURCHASE_DATE = "purchaseDate";
+    public static final String KEY_PURCHASE_TIME = "purchaseTime";
     public static final String KEY_PURCHASE_IMAGE = "purchaseImage";
     public static final String KEY_PURCHASE_BILL = "purchaseBill";
+
+    //feedback constants
+    public static final String KEY_FEEDBACK_TEXT = "feedbackText";
+    public static final String KEY_FEEDBACK_IMAGES = "feedbackImages";
+    public static final String KEY_FEEDBACK_AUDIO = "feedbackAudio";
+    public static final String KEY_FEEDBACK_LOCATION = "feedbackLocation";
+
+    //feedback constants
+    public static final String KEY_DISCOUNT_TEXT = "discountText";
+    public static final String KEY_DISCOUNT_LOCATIONS = "discountLocations";
 }

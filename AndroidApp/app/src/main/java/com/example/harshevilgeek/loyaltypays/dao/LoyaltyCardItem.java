@@ -63,14 +63,6 @@ public class LoyaltyCardItem extends ParseObject {
         put(LoyaltyConstants.KEY_CUSTOMER_ID, customerId);
     }
 
-    public ParseFile getCustomerImage() {
-        return getParseFile(LoyaltyConstants.KEY_CUSTOMER_IMAGE);
-    }
-
-    public void setCustomerImage(ParseFile customerImage) {
-        put(LoyaltyConstants.KEY_CUSTOMER_IMAGE, customerImage);
-    }
-
     public String getCardLocation() {
         return getString(LoyaltyConstants.KEY_CARD_LOCATION);
     }
