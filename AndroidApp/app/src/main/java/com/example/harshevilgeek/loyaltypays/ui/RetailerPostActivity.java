@@ -20,9 +20,7 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.TimeZone;
 
 /**
  * Created by akhil on 3/14/15.
@@ -35,7 +33,8 @@ public class RetailerPostActivity extends Activity {
     public static final String EDIT_ITEM = "EDIT_ITEM";
     public static final String OBJECT_ID = "OBJECT_ID";
     public static final String ITEM_NAME = "ITEM_NAME";
-    public static final String ITEM_TIME_ZONE = "ITEM_TIME_ZONE";
+    public static final String ITEM_LOCATIONS = "ITEM_LOCATIONS";
+    public static final String ITEM_TERMS = "ITEM_TERMS";
 
 
     private static final int MAX_CHARACTER_COUNT = 20;
@@ -43,6 +42,7 @@ public class RetailerPostActivity extends Activity {
     // UI references.
     private EditText nameEditText;
     private AutoCompleteTextView locationTextView;
+    private EditText termsEditText;
     private Button addButton;
     private String action;
     private String objectId;
@@ -53,7 +53,9 @@ public class RetailerPostActivity extends Activity {
 
         setContentView(R.layout.activity_retailer_post);
 
-        nameEditText = (EditText) findViewById(R.id.card_type_post_name);
+        nameEditText = (EditText) findViewById(R.id.post_name);
+        termsEditText = (EditText) findViewById(R.id.post_terms);
+
         ParseUser user = ParseUser.getCurrentUser();
         List<String> locations = (List<String>) user.get(LoyaltyConstants.KEY_COMPANY_LOCATIONS);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -79,7 +81,8 @@ public class RetailerPostActivity extends Activity {
 
         if (EDIT_ITEM.equals(action)) {
             nameEditText.setText(intent.getStringExtra(ITEM_NAME));
-            locationTextView.setText(intent.getStringExtra(ITEM_TIME_ZONE));
+            locationTextView.setText(intent.getStringExtra(ITEM_LOCATIONS));
+            termsEditText.setText(intent.getStringExtra(ITEM_TERMS));
             objectId = intent.getStringExtra(OBJECT_ID);
             addButton.setText(getString(R.string.post_card_type));
         }
@@ -91,6 +94,7 @@ public class RetailerPostActivity extends Activity {
     private void post() {
         String name = nameEditText.getText().toString().trim();
         String location = locationTextView.getText().toString();
+        String terms = termsEditText.getText().toString().trim();
 
         List<String> locationList = new ArrayList<String>();
         locationList.add(location);
@@ -116,6 +120,7 @@ public class RetailerPostActivity extends Activity {
         }
         loyaltyCardType.setCompanyName(name);
         loyaltyCardType.setCompanyLocations(locationList);
+        loyaltyCardType.setCardTerms(terms);
         loyaltyCardType.setUser(ParseUser.getCurrentUser());
         ParseACL acl = new ParseACL();
 
