@@ -37,7 +37,6 @@ public class Application extends android.app.Application {
     public void onCreate() {
         super.onCreate();
 
-        ParseUser.registerSubclass(LoyaltyUser.class);
         ParseObject.registerSubclass(LoyaltyCardItem.class);
         ParseObject.registerSubclass(LoyaltyCardPurchases.class);
         ParseObject.registerSubclass(LoyaltyDiscountsAndCoupons.class);

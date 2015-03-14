@@ -3,13 +3,14 @@ package com.example.harshevilgeek.loyaltypays.dao;
 import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.util.List;
 
 /**
  * Created by akhil on 3/14/15.
  */
-@ParseClassName("CompanyDiscountsAndCoupons")
+@ParseClassName("LoyaltyDiscountsAndCoupons")
 public class LoyaltyDiscountsAndCoupons extends ParseObject {
 
     public String getCompanyId() {
@@ -42,5 +43,9 @@ public class LoyaltyDiscountsAndCoupons extends ParseObject {
 
     public void setDiscountLocations(List<String> discountLocations) {
         put(LoyaltyConstants.KEY_DISCOUNT_LOCATIONS, discountLocations);
+    }
+
+    public static ParseQuery<LoyaltyDiscountsAndCoupons> getQuery() {
+        return ParseQuery.getQuery(LoyaltyDiscountsAndCoupons.class);
     }
 }

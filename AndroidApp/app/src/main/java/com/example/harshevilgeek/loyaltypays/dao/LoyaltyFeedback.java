@@ -4,6 +4,7 @@ import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.util.List;
 
@@ -61,4 +62,7 @@ public class LoyaltyFeedback extends ParseObject {
         put(LoyaltyConstants.KEY_FEEDBACK_LOCATION, feedbackLocation);
     }
 
+    public static ParseQuery<LoyaltyFeedback> getQuery() {
+        return ParseQuery.getQuery(LoyaltyFeedback.class);
+    }
 }

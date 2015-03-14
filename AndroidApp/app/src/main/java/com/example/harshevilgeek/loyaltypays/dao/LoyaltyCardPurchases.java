@@ -4,6 +4,7 @@ import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.util.List;
 
@@ -91,5 +92,9 @@ public class LoyaltyCardPurchases extends ParseObject {
 
     public void setPurchaseBill(ParseFile purchaseBill) {
         put(LoyaltyConstants.KEY_PURCHASE_BILL, purchaseBill);
+    }
+
+    public static ParseQuery<LoyaltyCardPurchases> getQuery() {
+        return ParseQuery.getQuery(LoyaltyCardPurchases.class);
     }
 }
