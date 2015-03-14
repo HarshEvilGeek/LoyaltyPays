@@ -85,7 +85,7 @@ public class WelcomeActivity extends Activity {
                 if (checked)
                     mode = LoyaltyConstants.VALUE_CUSTOMER_TYPE_CONSUMER;
                 break;
-            case R.id.radio_female:
+            case R.id.radio_retailer:
                 if (checked)
                     mode = LoyaltyConstants.VALUE_CUSTOMER_TYPE_RETAILER;
                 break;
