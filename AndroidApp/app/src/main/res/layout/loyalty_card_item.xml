@@ -6,10 +6,10 @@
     android:orientation="horizontal">
 
 
-    <CheckBox
-        android:id="@+id/timezone_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/loyalty_card_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_gravity="center_vertical"
         android:focusable="false"/>
 
@@ -22,13 +22,13 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/name_view"
+            android:id="@+id/company_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
-            android:id="@+id/timezone_view"
+            android:id="@+id/loyalty_points"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall" />
