@@ -36,7 +36,7 @@ public class LoyaltyConstants {
     public static final String KEY_CARD_NAME = "cardName";
     public static final String KEY_EXPIRY_TIME = "expiryTime";
     public static final String KEY_LOYALTY_POINTS = "loyaltyPoints";
-    public static final String KEY_LOYALTY_CARD_ID = "loyaltyCardId";
+    public static final String KEY_LOYALTY_CARD_TYPE_ID = "loyaltyCardTypeId";
     public static final String KEY_LOYALTY_QR_CODE = "loyaltyQRCode";
     public static final String KEY_CARD_LOCATION = "cardLocation";
     public static final String KEY_CARD_TERMS = "cardTerms";

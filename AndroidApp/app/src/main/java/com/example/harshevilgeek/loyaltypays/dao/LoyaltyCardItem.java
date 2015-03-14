@@ -79,12 +79,12 @@ public class LoyaltyCardItem extends ParseObject {
         put(LoyaltyConstants.KEY_LOYALTY_QR_CODE, qrCode);
     }
 
-    public String getLoyaltyCardId() {
-        return getString(LoyaltyConstants.KEY_LOYALTY_CARD_ID);
+    public String getLoyaltyCardTypeId() {
+        return getString(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID);
     }
 
-    public void setLoyaltyCardId(String loyaltyCardId) {
-        put(LoyaltyConstants.KEY_LOYALTY_CARD_ID, loyaltyCardId);
+    public void setLoyaltyCardTypeId(String loyaltyCardTypeId) {
+        put(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID, loyaltyCardTypeId);
     }
 
     public int getLoyaltyPoints() {

@@ -11,20 +11,16 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.harshevilgeek.loyaltypays.R;
 import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardItem;
-import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardType;
 import com.parse.ParseACL;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 /**
  * Created by averghese on 14-Mar-15.
@@ -144,7 +140,7 @@ public class RegisterWithARetailerActivity  extends Activity{
         LoyaltyCardItem loyaltyCardItem = new LoyaltyCardItem();
         loyaltyCardItem.setCustomerName(userFullName);
         loyaltyCardItem.setCustomerId(user.getObjectId());
-        loyaltyCardItem.setLoyaltyCardId(loyaltyCardId);
+        loyaltyCardItem.setLoyaltyCardTypeId(loyaltyCardId);
         ParseACL acl = new ParseACL();
 
         // Give public read access
@@ -168,7 +164,7 @@ public class RegisterWithARetailerActivity  extends Activity{
         super.onSaveInstanceState(outState);
         outState.putString(LoyaltyConstants.KEY_COMPANY_NAME, companyName);
         outState.putString(LoyaltyConstants.KEY_CARD_TERMS, termsAndCond);
-        outState.putString(LoyaltyConstants.KEY_LOYALTY_CARD_ID, loyaltyCardId);
+        outState.putString(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID, loyaltyCardId);
     }
 
     private void populateData(Bundle bundle) {
@@ -188,7 +184,7 @@ public class RegisterWithARetailerActivity  extends Activity{
 
         companyName = bundle.getString(LoyaltyConstants.KEY_COMPANY_NAME);
         termsAndCond = bundle.getString(LoyaltyConstants.KEY_CARD_TERMS);
-        loyaltyCardId = bundle.getString(LoyaltyConstants.KEY_LOYALTY_CARD_ID);
+        loyaltyCardId = bundle.getString(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID);
 
     }
 }
