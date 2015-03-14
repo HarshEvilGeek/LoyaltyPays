@@ -89,4 +89,20 @@ public class LoyaltyUser extends ParseUser {
     public static ParseQuery<LoyaltyUser> getUserQuery() {
         return ParseQuery.getQuery(LoyaltyUser.class);
     }
+
+    public String getCustomerAgeGroup() {
+        return getString(LoyaltyConstants.KEY_CUSTOMER_AGE_GROUP);
+    }
+
+    public void setCustomerAgeGroup(String customerAgeGroup) {
+        put(LoyaltyConstants.KEY_CUSTOMER_AGE_GROUP, customerAgeGroup);
+    }
+
+    public String getCustomerGender() {
+        return getString(LoyaltyConstants.KEY_CUSTOMER_GENDER);
+    }
+
+    public void setCustomerGender(String customerGender) {
+        put(LoyaltyConstants.KEY_CUSTOMER_GENDER, customerGender);
+    }
 }

@@ -49,7 +49,7 @@ public class CustomerMainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_customer_main);
 
         timeZoneListView = (ListView) findViewById(R.id.time_zone_list);
         addNewButton = (Button) findViewById(R.id.add_new_button);

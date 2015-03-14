@@ -18,9 +18,17 @@ public class LoyaltyConstants {
 
     // user constants
     public static final String KEY_USER_TYPE = "userType";
+    public static final String KEY_CUSTOMER_AGE_GROUP = "userType";
+    public static final String KEY_CUSTOMER_GENDER = "userType";
 
-    public static final String VALUE_USER_TYPE_CONSUMER = "consumer";
-    public static final String VALUE_USER_TYPE_RETAILER = "retailer";
+    public static final String VALUE_CUSTOMER_TYPE_CONSUMER = "consumer";
+    public static final String VALUE_CUSTOMER_TYPE_RETAILER = "retailer";
+    public static final String VALUE_CUSTOMER_AGE_GROUP_TEENAGER = "Minor(13-17)";
+    public static final String VALUE_CUSTOMER_AGE_GROUP_YOUNG_ADULT = "Young Adult(18-30)";
+    public static final String VALUE_CUSTOMER_AGE_GROUP_ADULT = "Adult(31-55)";
+    public static final String VALUE_CUSTOMER_AGE_GROUP_SENIOR = "Senior(55+)";
+    public static final String VALUE_CUSTOMER_GENDER_MALE = "Male";
+    public static final String VALUE_CUSTOMER_GENDER_FEMALE = "Female";
 
     // loyalty item constants
     public static final String KEY_EXPIRY_TIME = "expiryTime";
