@@ -103,7 +103,7 @@ public class SignUpActivity extends Activity {
     LoyaltyUser user = new LoyaltyUser();
     user.setUsername(username);
     user.setPassword(password);
-    user.setUserType(LoyaltyConstants.VALUE_USER_TYPE_CONSUMER);
+    user.setUserType(LoyaltyConstants.VALUE_CUSTOMER_TYPE_CONSUMER);
 
     // Call the Parse signup method
     user.signUpInBackground(new SignUpCallback() {
