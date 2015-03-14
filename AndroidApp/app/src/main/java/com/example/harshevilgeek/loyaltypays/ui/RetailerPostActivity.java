@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -63,6 +65,21 @@ public class RetailerPostActivity extends Activity {
         locationTextView = (AutoCompleteTextView) findViewById(R.id.company_locations_spinner);
         locationTextView.setAdapter(adapter);
 
+        nameEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                updateAddButtonState();
+            }
+        });
+
         addButton = (Button) findViewById(R.id.post_button);
         addButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -102,7 +119,7 @@ public class RetailerPostActivity extends Activity {
         List<String> locations = (List<String>) user.get(LoyaltyConstants.KEY_COMPANY_LOCATIONS);
 
         if (!locations.contains(location)) {
-            Toast.makeText(this, "Invalid time zone", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Invalid location", Toast.LENGTH_LONG).show();
             return;
         }
 

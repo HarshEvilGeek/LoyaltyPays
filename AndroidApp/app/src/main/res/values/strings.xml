@@ -21,6 +21,9 @@
     <string name="add_new_loyalty_card">Add a new loyalty card</string>
 
     <string name="post_button_text">Post</string>
+    <string name="name_post">Name</string>
+    <string name="location_post">Location (Country:City)</string>
+    <string name="terms_post">Terms and Conditions</string>
 
     <string name="parse_application_id">SMtBgErC8ttG0s38g9agFUcfxOT7ywzNhCeHrE5j</string>
     <string name="parse_client_key">l7KmzIae6DFJ2tGfcgV7convA5iyvs0OsXU4yimb</string>
