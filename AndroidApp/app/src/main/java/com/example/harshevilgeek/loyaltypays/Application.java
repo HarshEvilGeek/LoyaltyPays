@@ -8,8 +8,10 @@ import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardPurchases;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyDiscountsAndCoupons;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyFeedback;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyPromotionsAndDiscounts;
+import com.example.harshevilgeek.loyaltypays.dao.LoyaltyUser;
 import com.parse.Parse;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 public class Application extends android.app.Application {
     // Debugging switch
@@ -35,6 +37,7 @@ public class Application extends android.app.Application {
     public void onCreate() {
         super.onCreate();
 
+        ParseUser.registerSubclass(LoyaltyUser.class);
         ParseObject.registerSubclass(LoyaltyCardItem.class);
         ParseObject.registerSubclass(LoyaltyCardPurchases.class);
         ParseObject.registerSubclass(LoyaltyDiscountsAndCoupons.class);
