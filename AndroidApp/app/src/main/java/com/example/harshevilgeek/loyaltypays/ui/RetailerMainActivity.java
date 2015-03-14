@@ -32,7 +32,8 @@ public class RetailerMainActivity extends FragmentActivity {
     private String selectedTimeZone;
     private String selectedItem = null;
     private String selectedItemName;
-    private String selectedItemTimeZone;
+    private String selectedItemLocations;
+    private String selectedItemsTerms;
 
     private ListView loyaltyCardTypeListView;
     private Button addNewButton;
@@ -100,17 +101,19 @@ public class RetailerMainActivity extends FragmentActivity {
                     cardTypeCheckBox.setChecked(false);
                 }
 
-                final String name = cardType.getCompanyName();
-                String locationList ="";
+                final String name = cardType.getCardName();
+                final String terms = cardType.getCardTerms();
+                String locationList = "";
                 try {
                     locationList = cardType.getCardLocations().toString();
                 }
                 catch (Exception e) {
 
                 }
+                final String locations = locationList;
 
                 cardTypeName.setText(name);
-                cardTypeLocation.setText(locationList);
+                cardTypeLocation.setText(locations);
 
                 cardTypeCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
@@ -120,6 +123,8 @@ public class RetailerMainActivity extends FragmentActivity {
                         } else if (isChecked) {
                             selectedItem = id;
                             selectedItemName = name;
+                            selectedItemsTerms = terms;
+                            selectedItemLocations = locations;
                         } else {
                             selectedItem = null;
                         }
@@ -167,7 +172,8 @@ public class RetailerMainActivity extends FragmentActivity {
                     Intent intent = new Intent(RetailerMainActivity.this, RetailerPostActivity.class);
                     intent.putExtra(RetailerPostActivity.ACTION, RetailerPostActivity.EDIT_ITEM);
                     intent.putExtra(RetailerPostActivity.ITEM_NAME, selectedItemName);
-                    intent.putExtra(RetailerPostActivity.ITEM_LOCATIONS, selectedItemTimeZone);
+                    intent.putExtra(RetailerPostActivity.ITEM_LOCATIONS, selectedItemLocations);
+                    intent.putExtra(RetailerPostActivity.ITEM_TERMS, selectedItemsTerms);
                     intent.putExtra(RetailerPostActivity.OBJECT_ID, selectedItem);
                     selectedItem = null;
                     updateModifiable();

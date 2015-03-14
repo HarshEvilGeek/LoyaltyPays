@@ -16,9 +16,11 @@
 
     <string name="edit_loyalty_card">Edit</string>
     <string name="delete_loyalty_card">Delete</string>
+    <string name="send_coupon_to_card">Send Coupon</string>
 
     <string name="register_with_retailer_prompt">Register with retailers to view your loyalty cards</string>
     <string name="add_new_loyalty_card">Add a new loyalty card</string>
+    <string name="add_new_purchase">Add a Purchase</string>
 
     <string name="post_button_text">Post</string>
     <string name="name_post">Name</string>

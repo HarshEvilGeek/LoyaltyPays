@@ -5,6 +5,7 @@ import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.List;
 
@@ -38,6 +39,14 @@ public class LoyaltyPromotionsAndDeals extends ParseObject {
         put(LoyaltyConstants.KEY_PROMOTION_NAME, promotionName);
     }
 
+    public String getLoyaltyCardTypeId() {
+        return getString(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID);
+    }
+
+    public void setLoyaltyCardTypeId(String loyaltyCardTypeId) {
+        put(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID, loyaltyCardTypeId);
+    }
+
     public String getPromotionText() {
         return getString(LoyaltyConstants.KEY_PROMOTION_TEXT);
     }
@@ -64,5 +73,13 @@ public class LoyaltyPromotionsAndDeals extends ParseObject {
 
     public void setPromotionImage(ParseFile promotionImage) {
         put(LoyaltyConstants.KEY_PROMOTION_IMAGE, promotionImage);
+    }
+
+    public ParseUser getUser() {
+        return getParseUser(LoyaltyConstants.KEY_USER);
+    }
+
+    public void setUser(ParseUser value) {
+        put(LoyaltyConstants.KEY_USER, value);
     }
 }

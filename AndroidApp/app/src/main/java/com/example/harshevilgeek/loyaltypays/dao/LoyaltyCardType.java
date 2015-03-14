@@ -63,6 +63,14 @@ public class LoyaltyCardType extends ParseObject {
         put(LoyaltyConstants.KEY_CARD_TERMS, cardTerms);
     }
 
+    public double getCardRatio() {
+        return getDouble(LoyaltyConstants.KEY_CARD_RATIO);
+    }
+
+    public void setCardRatio(double cardRatio) {
+        put(LoyaltyConstants.KEY_CARD_RATIO, cardRatio);
+    }
+
     public static ParseQuery<LoyaltyCardType> getQuery() {
         return ParseQuery.getQuery(LoyaltyCardType.class);
     }

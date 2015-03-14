@@ -11,11 +11,14 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.harshevilgeek.loyaltypays.R;
 import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardType;
+import com.example.harshevilgeek.loyaltypays.dao.LoyaltyPromotionsAndDeals;
 import com.parse.ParseACL;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -31,6 +34,8 @@ import java.util.List;
 public class RetailerPostActivity extends Activity {
 
     public static final String ACTION = "ACTION";
+    public static final String PROMOTION_ACTION = "PROMOTION_ACTION";
+    public static final String CARD_TYPE_ACTION = "CARD_TYPE_ACTION";
     public static final String ADD_NEW_ITEM = "ADD_NEW_ITEM";
     public static final String EDIT_ITEM = "EDIT_ITEM";
     public static final String OBJECT_ID = "OBJECT_ID";
@@ -41,7 +46,10 @@ public class RetailerPostActivity extends Activity {
 
     private static final int MAX_CHARACTER_COUNT = 20;
 
+    String mPostAction = CARD_TYPE_ACTION;
+
     // UI references.
+    private RadioGroup modeGroup;
     private EditText nameEditText;
     private AutoCompleteTextView locationTextView;
     private EditText termsEditText;
@@ -55,6 +63,7 @@ public class RetailerPostActivity extends Activity {
 
         setContentView(R.layout.activity_retailer_post);
 
+        modeGroup = (RadioGroup) findViewById(R.id.post_action_radio);
         nameEditText = (EditText) findViewById(R.id.post_name);
         termsEditText = (EditText) findViewById(R.id.post_terms);
 
@@ -102,8 +111,7 @@ public class RetailerPostActivity extends Activity {
             termsEditText.setText(intent.getStringExtra(ITEM_TERMS));
             objectId = intent.getStringExtra(OBJECT_ID);
             addButton.setText(getString(R.string.post_card_type));
-        }
-        else {
+        } else {
             action = ADD_NEW_ITEM;
         }
     }
@@ -129,31 +137,60 @@ public class RetailerPostActivity extends Activity {
         dialog.show();
 
         // Create a post.
-        LoyaltyCardType loyaltyCardType = new LoyaltyCardType();
+        if (mPostAction.equals(CARD_TYPE_ACTION)) {
+            LoyaltyCardType loyaltyCardType = new LoyaltyCardType();
 
-        // Set the location to the current user's location
-        if (EDIT_ITEM.equals(action)) {
-            loyaltyCardType.setObjectId(objectId);
-        }
-        loyaltyCardType.setCardName(name);
-        loyaltyCardType.setCardLocations(locationList);
-        loyaltyCardType.setCardTerms(terms);
-        loyaltyCardType.setUser(ParseUser.getCurrentUser());
-        ParseACL acl = new ParseACL();
-
-        // Give public read access
-        acl.setPublicReadAccess(true);
-        acl.setPublicWriteAccess(true);
-        loyaltyCardType.setACL(acl);
-
-        // Save the post
-        loyaltyCardType.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                dialog.dismiss();
-                finish();
+            // Set the location to the current user's location
+            if (EDIT_ITEM.equals(action)) {
+                loyaltyCardType.setObjectId(objectId);
             }
-        });
+            loyaltyCardType.setCardName(name);
+            loyaltyCardType.setCardLocations(locationList);
+            loyaltyCardType.setCardTerms(terms);
+            loyaltyCardType.setUser(ParseUser.getCurrentUser());
+            ParseACL acl = new ParseACL();
+
+            // Give public read access
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            loyaltyCardType.setACL(acl);
+
+            // Save the post
+            loyaltyCardType.saveInBackground(new SaveCallback() {
+                @Override
+                public void done(ParseException e) {
+                    dialog.dismiss();
+                    finish();
+                }
+            });
+        } else {
+            LoyaltyPromotionsAndDeals loyaltyPromotionsAndDeals = new LoyaltyPromotionsAndDeals();
+
+            // Set the location to the current user's location
+            if (EDIT_ITEM.equals(action)) {
+                loyaltyPromotionsAndDeals.setObjectId(objectId);
+            }
+            loyaltyPromotionsAndDeals.setPromotionName(name);
+            loyaltyPromotionsAndDeals.setPromotionLocations(locationList);
+            loyaltyPromotionsAndDeals.setPromotionText(terms);
+            loyaltyPromotionsAndDeals.setUser(ParseUser.getCurrentUser());
+            ParseACL acl = new ParseACL();
+
+            // Give public read access
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            loyaltyPromotionsAndDeals.setACL(acl);
+
+            // Save the post
+            loyaltyPromotionsAndDeals.saveInBackground(new SaveCallback() {
+                @Override
+                public void done(ParseException e) {
+                    dialog.dismiss();
+                    finish();
+                }
+            });
+
+        }
     }
 
     private String getNameEditTextText() {
@@ -164,5 +201,24 @@ public class RetailerPostActivity extends Activity {
         int length = getNameEditTextText().length();
         boolean enabled = length > 0 && length < MAX_CHARACTER_COUNT;
         addButton.setEnabled(enabled);
+    }
+
+
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.radio_card_type:
+                if (checked)
+                    mPostAction = CARD_TYPE_ACTION;
+                break;
+            case R.id.radio_promotion:
+                if (checked)
+                    mPostAction = PROMOTION_ACTION;
+                break;
+            default:
+                mPostAction = CARD_TYPE_ACTION;
+        }
     }
 }

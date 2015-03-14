@@ -40,6 +40,7 @@ public class LoyaltyConstants {
     public static final String KEY_LOYALTY_QR_CODE = "loyaltyQRCode";
     public static final String KEY_CARD_LOCATION = "cardLocation";
     public static final String KEY_CARD_TERMS = "cardTerms";
+    public static final String KEY_CARD_RATIO = "cardRatio";
 
     // promotions and discounts constants
     public static final String KEY_PROMOTION_NAME = "promotionName";
@@ -65,6 +66,6 @@ public class LoyaltyConstants {
 
     //feedback constants
     public static final String KEY_DISCOUNT_TEXT = "discountText";
-    public static final String KEY_DISCOUNT_LOCATIONS = "discountLocations";
+    public static final String KEY_DISCOUNT_MIN_POINTS = "discountMinPoints";
     public static final String KEY_DISCOUNT_IMAGE = "discountImage";
 }

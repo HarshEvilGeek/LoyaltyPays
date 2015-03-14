@@ -95,6 +95,14 @@ public class LoyaltyCardItem extends ParseObject {
         put(LoyaltyConstants.KEY_LOYALTY_POINTS, loyaltyPoints);
     }
 
+    public double getCardRatio() {
+        return getDouble(LoyaltyConstants.KEY_CARD_RATIO);
+    }
+
+    public void setCardRatio(double cardRatio) {
+        put(LoyaltyConstants.KEY_CARD_RATIO, cardRatio);
+    }
+
     public long getExpiryTime() {
         return getInt(LoyaltyConstants.KEY_EXPIRY_TIME);
     }

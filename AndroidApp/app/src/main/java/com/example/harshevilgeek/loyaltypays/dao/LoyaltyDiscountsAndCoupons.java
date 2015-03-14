@@ -5,6 +5,7 @@ import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.List;
 
@@ -38,16 +39,12 @@ public class LoyaltyDiscountsAndCoupons extends ParseObject {
         put(LoyaltyConstants.KEY_DISCOUNT_TEXT, discountText);
     }
 
-    public List<String> getDiscountLocations() {
-        return getList(LoyaltyConstants.KEY_DISCOUNT_LOCATIONS);
+    public int getDiscountMinPoints() {
+        return getInt(LoyaltyConstants.KEY_DISCOUNT_MIN_POINTS);
     }
 
-    public void setDiscountLocations(List<String> discountLocations) {
-        put(LoyaltyConstants.KEY_DISCOUNT_LOCATIONS, discountLocations);
-    }
-
-    public static ParseQuery<LoyaltyDiscountsAndCoupons> getQuery() {
-        return ParseQuery.getQuery(LoyaltyDiscountsAndCoupons.class);
+    public void setDiscountMinPoints(int discountMinPoints) {
+        put(LoyaltyConstants.KEY_DISCOUNT_MIN_POINTS, discountMinPoints);
     }
 
     public ParseFile getDiscountImage() {
@@ -56,5 +53,17 @@ public class LoyaltyDiscountsAndCoupons extends ParseObject {
 
     public void setDiscountImage(ParseFile discountImage) {
         put(LoyaltyConstants.KEY_DISCOUNT_IMAGE, discountImage);
+    }
+
+    public static ParseQuery<LoyaltyDiscountsAndCoupons> getQuery() {
+        return ParseQuery.getQuery(LoyaltyDiscountsAndCoupons.class);
+    }
+
+    public ParseUser getUser() {
+        return getParseUser(LoyaltyConstants.KEY_USER);
+    }
+
+    public void setUser(ParseUser value) {
+        put(LoyaltyConstants.KEY_USER, value);
     }
 }

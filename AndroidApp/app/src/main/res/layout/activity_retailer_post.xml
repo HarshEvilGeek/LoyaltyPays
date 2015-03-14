@@ -4,6 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/post_action_radio"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton android:id="@+id/radio_card_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post card type"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/radio_promotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post promotion"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
     <EditText
         android:id="@+id/post_name"
         android:layout_width="match_parent"
