@@ -50,14 +50,7 @@ public class CustomerMainActivity extends FragmentActivity {
 
     private GridView landingGridView;
 
-    private LinearLayout modifyLayout;
-
     private ParseQueryAdapter<? extends ParseObject> mAdapter;
-
-    // Adapter for the Parse query
-    private ParseQueryAdapter<LoyaltyCardType> loyaltyCardTypeQueryAdapter;
-    private ParseQueryAdapter<LoyaltyCardPurchases> loyaltyCardPurchasesQueryAdapter;
-    private ParseQueryAdapter<LoyaltyPromotionsAndDeals> loyaltyPromotionsItemQueryAdapter;
 
     private String[] landingOptions = null;
     private DrawerLayout optionsDrawer = null;
@@ -71,7 +64,16 @@ public class CustomerMainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mMode = savedInstanceState.getString(MODE, MODE_CARD_ITEMS);
+        if (savedInstanceState != null) {
+            mMode = savedInstanceState.getString(MODE, MODE_CARD_ITEMS);
+        }
+        else if (getIntent() != null) {
+            mMode = getIntent().getStringExtra(MODE);
+        }
+
+        if (mMode == null) {
+            mMode = MODE_CARD_ITEMS;
+        }
 
         setContentView(R.layout.activity_customer_main);
 
@@ -79,6 +81,7 @@ public class CustomerMainActivity extends FragmentActivity {
         getActionBar().setIcon(R.drawable.home_icon);
         optionsDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerList = (ListView) findViewById(R.id.main_options_list);
+        drawerList.setOnItemClickListener(new DrawerItemClickListener(this));
 
         drawerList.setAdapter(getAdapter());
         populateData();
@@ -96,6 +99,38 @@ public class CustomerMainActivity extends FragmentActivity {
                 handleItemClick(item);
             }
         });
+    }
+
+    private class DrawerItemClickListener implements AdapterView.OnItemClickListener
+    {
+        private Context context;
+        public DrawerItemClickListener(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        public void onItemClick(AdapterView parent, View view, int position, long id) {
+            selectItem(position);
+        }
+
+        private void selectItem(int position) {
+            String mode = MODE_CARD_ITEMS;
+            if(position == 0) {
+                mode = MODE_CARD_ITEMS;
+            }
+            else if(position == 1) {
+                mode = MODE_CARD_ITEMS;
+            }
+            else if(position == 2) {
+                mode = MODE_CARD_PROMOTIONS;
+            }
+            else if(position == 3) {
+                mode = MODE_CARD_PURCHASES;
+            }
+           Intent activityIntent = new Intent(context, CustomerMainActivity.class );
+            activityIntent.putExtra(MODE, mode);
+            context.startActivity(activityIntent);
+        }
     }
 
     private void populateData()
