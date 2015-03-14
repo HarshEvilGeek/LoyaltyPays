@@ -4,54 +4,45 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardItem;
+import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardPurchases;
+import com.example.harshevilgeek.loyaltypays.dao.LoyaltyDiscountsAndCoupons;
+import com.example.harshevilgeek.loyaltypays.dao.LoyaltyFeedback;
+import com.example.harshevilgeek.loyaltypays.dao.LoyaltyPromotionsAndDiscounts;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
 public class Application extends android.app.Application {
-  // Debugging switch
-  public static final boolean APPDEBUG = false;
+    // Debugging switch
+    public static final boolean APPDEBUG = false;
 
-  // Debugging tag for the application
-  public static final String APPTAG = "LoyaltyPays";
+    // Debugging tag for the application
+    public static final String APPTAG = "LoyaltyPays";
 
-  // Used to pass location from MainActivity to PostActivity
-  public static final String INTENT_EXTRA_LOCATION = "location";
+    // Used to pass location from MainActivity to PostActivity
+    public static final String INTENT_EXTRA_LOCATION = "location";
 
-  // Key for saving the search distance preference
-  private static final String KEY_SEARCH_DISTANCE = "searchDistance";
+    // Key for saving the search distance preference
+    private static final String KEY_SEARCH_DISTANCE = "searchDistance";
 
-  private static final float DEFAULT_SEARCH_DISTANCE = 250.0f;
+    private static final float DEFAULT_SEARCH_DISTANCE = 250.0f;
 
-  private static SharedPreferences preferences;
+    private static SharedPreferences preferences;
 
-  private static ConfigHelper configHelper;
+    public Application() {
+    }
 
-  public Application() {
-  }
+    @Override
+    public void onCreate() {
+        super.onCreate();
 
-  @Override
-  public void onCreate() {
-    super.onCreate();
+        ParseObject.registerSubclass(LoyaltyCardItem.class);
+        ParseObject.registerSubclass(LoyaltyCardPurchases.class);
+        ParseObject.registerSubclass(LoyaltyDiscountsAndCoupons.class);
+        ParseObject.registerSubclass(LoyaltyFeedback.class);
+        ParseObject.registerSubclass(LoyaltyPromotionsAndDiscounts.class);
+        Parse.initialize(this, getString(R.string.parse_application_id), getString(R.string.parse_client_key));
 
-    ParseObject.registerSubclass(LoyaltyCardItem.class);
-    Parse.initialize(this, getString(R.string.parse_application_id), getString(R.string.parse_client_key));
-
-    preferences = getSharedPreferences("com.example.harshevilgeek.loyaltypays", Context.MODE_PRIVATE);
-
-    configHelper = new ConfigHelper();
-    configHelper.fetchConfigIfNeeded();
-  }
-
-  public static float getSearchDistance() {
-    return preferences.getFloat(KEY_SEARCH_DISTANCE, DEFAULT_SEARCH_DISTANCE);
-  }
-
-  public static ConfigHelper getConfigHelper() {
-    return configHelper;
-  }
-
-  public static void setSearchDistance(float value) {
-    preferences.edit().putFloat(KEY_SEARCH_DISTANCE, value).commit();
-  }
+        preferences = getSharedPreferences("com.example.harshevilgeek.loyaltypays", Context.MODE_PRIVATE);
+    }
 
 }
