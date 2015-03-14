@@ -86,7 +86,7 @@ public class RetailerMainActivity extends FragmentActivity {
             @Override
             public View getItemView(LoyaltyCardType cardType, View view, ViewGroup parent) {
                 if (view == null) {
-                    view = View.inflate(getContext(), R.layout.loyalty_card_type_item, null);
+                    view = View.inflate(getContext(), R.layout.retailer_loyalty_card_type_item, null);
                 }
                 TextView cardTypeName = (TextView) view.findViewById(R.id.card_type_name);
                 TextView cardTypeLocation = (TextView) view.findViewById(R.id.card_type_location);

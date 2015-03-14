@@ -140,7 +140,7 @@ public class CustomerMainActivity extends FragmentActivity {
                 @Override
                 public View getItemView(LoyaltyCardItem item, View view, ViewGroup parent) {
                     if (view == null) {
-                        view = View.inflate(getContext(), R.layout.loyalty_card_item, null);
+                        view = View.inflate(getContext(), R.layout.customer_loyalty_card_item, null);
                     }
                     ImageView imageView = (ImageView) view.findViewById(R.id.loyalty_card_image);
                     TextView companyNameView = (TextView) view.findViewById(R.id.company_name);
@@ -187,7 +187,7 @@ public class CustomerMainActivity extends FragmentActivity {
                 @Override
                 public View getItemView(LoyaltyCardType item, View view, ViewGroup parent) {
                     if (view == null) {
-                        view = View.inflate(getContext(), R.layout.loyalty_card_type_view_item, null);
+                        view = View.inflate(getContext(), R.layout.customer_loyalty_card_type_item, null);
                     }
                     ImageView imageView = (ImageView) view.findViewById(R.id.loyalty_card_type_image);
                     TextView cardNameView = (TextView) view.findViewById(R.id.card_type_name);
@@ -225,7 +225,7 @@ public class CustomerMainActivity extends FragmentActivity {
                 @Override
                 public View getItemView(LoyaltyCardPurchases item, View view, ViewGroup parent) {
                     if (view == null) {
-                        view = View.inflate(getContext(), R.layout.loyalty_purchase_item, null);
+                        view = View.inflate(getContext(), R.layout.customer_loyalty_purchase_item, null);
                     }
                     ImageView imageView = (ImageView) view.findViewById(R.id.purchase_company_image);
                     TextView purchaseAmount = (TextView) view.findViewById(R.id.purchase_amount);
@@ -258,7 +258,7 @@ public class CustomerMainActivity extends FragmentActivity {
                             if (!locations.isEmpty()) {
                                 location = locations.get(0);
                             }
-                            query.whereContains(LoyaltyConstants.KEY_CARD_LOCATION,location);
+                            query.whereContains(LoyaltyConstants.KEY_CARD_LOCATION, location);
                             query.setLimit(MAX_LOYALTY_CARD_RESULTS);
                             return query;
                         }
@@ -269,7 +269,7 @@ public class CustomerMainActivity extends FragmentActivity {
                 @Override
                 public View getItemView(LoyaltyPromotionsAndDeals item, View view, ViewGroup parent) {
                     if (view == null) {
-                        view = View.inflate(getContext(), R.layout.loyalty_promotion_item, null);
+                        view = View.inflate(getContext(), R.layout.customer_loyalty_promotion_item, null);
                     }
                     ImageView imageView = (ImageView) view.findViewById(R.id.loyalty_promotion_image);
                     TextView promotionNameView = (TextView) view.findViewById(R.id.promotion_item_name);
