@@ -39,7 +39,7 @@ public class LoyaltyConstants {
     public static final String KEY_CARD_LOCATION = "cardLocation";
 
     // promotions and discounts constants
-    public static final String KEY_PROMOTION_LOCATION = "promotionLocation";
+    public static final String KEY_PROMOTION_LOCATIONS = "promotionLocations";
     public static final String KEY_PROMOTION_TEXT = "promotionText";
     public static final String KEY_PROMOTION_IMAGE = "promotionImage";
 

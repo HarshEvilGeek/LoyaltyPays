@@ -9,8 +9,8 @@ import java.util.List;
 /**
  * Created by akhil on 3/14/15.
  */
-@ParseClassName("CompanyDiscountsAndCoupons")
-public class LoyaltyDiscountsAndCoupons extends ParseObject {
+@ParseClassName("CompanyPromotionsAndDeals")
+public class LoyaltyPromotionsAndDeals extends ParseObject {
 
     public String getCompanyId() {
         return getString(LoyaltyConstants.KEY_COMPANY_ID);
@@ -28,19 +28,22 @@ public class LoyaltyDiscountsAndCoupons extends ParseObject {
         put(LoyaltyConstants.KEY_CUSTOMER_ID, customerId);
     }
 
-    public String getDiscountText() {
-        return getString(LoyaltyConstants.KEY_DISCOUNT_TEXT);
+    public String getPromotionText() {
+        return getString(LoyaltyConstants.KEY_PROMOTION_TEXT);
     }
 
-    public void setDiscountText(String discountText) {
-        put(LoyaltyConstants.KEY_DISCOUNT_TEXT, discountText);
+    public void setPromotionText(String promotionText) {
+        put(LoyaltyConstants.KEY_PROMOTION_TEXT, promotionText);
     }
 
-    public List<String> getDiscountLocations() {
-        return getList(LoyaltyConstants.KEY_DISCOUNT_LOCATIONS);
+    public List<String> getPromotionLocations() {
+        return getList(LoyaltyConstants.KEY_PROMOTION_LOCATIONS);
     }
 
-    public void setDiscountLocations(List<String> discountLocations) {
-        put(LoyaltyConstants.KEY_DISCOUNT_LOCATIONS, discountLocations);
+    public void setPromotionLocations(List<String> promotionLocations) {
+        put(LoyaltyConstants.KEY_PROMOTION_LOCATIONS, promotionLocations);
     }
+
+
+
 }
