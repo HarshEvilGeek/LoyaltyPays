@@ -161,7 +161,7 @@ public class RetailerMainActivity extends FragmentActivity {
                     Intent intent = new Intent(RetailerMainActivity.this, RetailerPostActivity.class);
                     intent.putExtra(RetailerPostActivity.ACTION, RetailerPostActivity.EDIT_ITEM);
                     intent.putExtra(RetailerPostActivity.ITEM_NAME, selectedItemName);
-                    intent.putExtra(RetailerPostActivity.ITEM_TIME_ZONE, selectedItemTimeZone);
+                    intent.putExtra(RetailerPostActivity.ITEM_LOCATIONS, selectedItemTimeZone);
                     intent.putExtra(RetailerPostActivity.OBJECT_ID, selectedItem);
                     selectedItem = null;
                     updateModifiable();

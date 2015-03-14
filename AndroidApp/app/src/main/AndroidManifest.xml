@@ -24,6 +24,16 @@
             android:theme="@android:style/Theme.Holo.Light"/>
 
         <activity
+            android:name=".ui.RetailerMainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light"/>
+
+        <activity
+            android:name=".ui.RetailerPostActivity"
+            android:label="@string/post_retailer_label"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
             android:name=".ui.LoginActivity"
             android:label="@string/title_activity_login"
              android:theme="@android:style/Theme.Holo.Light"/>

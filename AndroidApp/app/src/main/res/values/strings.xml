@@ -12,11 +12,15 @@
     <string name="post_card_type">Post Loyalty Card</string>
     <string name="progress_posting_card_type">Posting&#8230;</string>
 
+    <string name="post_retailer_label">Update Loyalty Details</string>
+
     <string name="edit_loyalty_card">Edit</string>
     <string name="delete_loyalty_card">Delete</string>
 
     <string name="register_with_retailer_prompt">Register with retailers to view your loyalty cards</string>
-    <string name="add_new_timezone">Add a new timezone</string>
+    <string name="add_new_loyalty_card">Add a new loyalty card</string>
+
+    <string name="post_button_text">Post</string>
 
     <string name="parse_application_id">SMtBgErC8ttG0s38g9agFUcfxOT7ywzNhCeHrE5j</string>
     <string name="parse_client_key">l7KmzIae6DFJ2tGfcgV7convA5iyvs0OsXU4yimb</string>
