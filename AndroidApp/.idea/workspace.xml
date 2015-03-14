@@ -102,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Application.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36507937" vertical-offset="177" max-vertical-offset="570">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
               <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
               <folding>
                 <element signature="e#1427#1467#0" expanded="true" />
@@ -155,11 +155,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WelcomeActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="WelcomeActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/WelcomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1260">
-              <caret line="87" column="36" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.42465752" vertical-offset="895" max-vertical-offset="1260">
+              <caret line="87" column="34" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -937,8 +937,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/dao/LoyaltyUser.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/RetailerMainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/WelcomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/Application.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/WelcomeActivity.java" />
       </list>
     </option>
   </component>
@@ -1763,14 +1763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/WelcomeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1260">
-          <caret line="87" column="36" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/SignUpActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="732" max-vertical-offset="2235">
@@ -1789,12 +1781,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36507937" vertical-offset="177" max-vertical-offset="570">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
           <folding>
             <element signature="e#1427#1467#0" expanded="true" />
             <element signature="e#1469#1505#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harshevilgeek/loyaltypays/ui/WelcomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42465752" vertical-offset="895" max-vertical-offset="1260">
+          <caret line="87" column="34" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
