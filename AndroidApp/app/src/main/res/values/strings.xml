@@ -67,7 +67,7 @@
     </string-array>
 
     <string name="option_register_with_retailer">Register me with a retailer</string>
-    <string name="option_view_registered_retailers">My registered retailers</string>
+    <string name="option_view_registered_retailers">My loyalty cards</string>
     <string name="option_view_promotions">Promotions &amp; Deals</string>
     <string name="option_usage_history">My usage history</string>
     <string name="option_my_deals">My deals</string>
