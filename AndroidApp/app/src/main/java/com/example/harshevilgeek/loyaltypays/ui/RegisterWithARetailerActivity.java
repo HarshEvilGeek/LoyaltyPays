@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.harshevilgeek.loyaltypays.R;
 import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
@@ -22,8 +23,10 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by averghese on 14-Mar-15.
@@ -137,6 +140,12 @@ public class RegisterWithARetailerActivity  extends Activity{
 
         ParseUser user = ParseUser.getCurrentUser();
 
+        List<String> locations = (List<String>) user.get(LoyaltyConstants.KEY_CUSTOMER_LOCATIONS);
+
+        if (!locations.contains(location)) {
+            Toast.makeText(this, "Invalid location, not one of your registered locations!", Toast.LENGTH_LONG).show();
+            return;
+        }
         // Set up a progress dialog
         final ProgressDialog dialog = new ProgressDialog(RegisterWithARetailerActivity.this);
         dialog.setMessage(getString(R.string.progress_posting_card_type));
