@@ -259,7 +259,7 @@ public class CustomerMainActivity extends FragmentActivity {
                             query.include(LoyaltyConstants.KEY_USER);
                             query.orderByDescending("createdAt");
                             ParseUser currentUser = ParseUser.getCurrentUser();
-                            query.whereEqualTo(LoyaltyConstants.KEY_USER, currentUser);
+                            query.whereEqualTo(LoyaltyConstants.KEY_CUSTOMER_ID, currentUser.getObjectId());
                             query.setLimit(MAX_LOYALTY_CARD_RESULTS);
                             return query;
                         }
@@ -276,7 +276,12 @@ public class CustomerMainActivity extends FragmentActivity {
                     TextView purchaseAmount = (TextView) view.findViewById(R.id.purchase_amount);
                     TextView purchaseDate = (TextView) view.findViewById(R.id.purchase_date);
 
-                    purchaseAmount.setText(item.getPurchaseAmount() + item.getPurchaseCurrency());
+                    String currency = String.valueOf(item.getPurchaseCurrency());
+                    if (currency.equals("null")) {
+                        currency = "INR";
+                    }
+                    currency = " " + currency;
+                    purchaseAmount.setText( item.getCompanyName() + " " + item.getPurchaseName() + " - " +item.getPurchaseAmount() + currency);
                     Date date = new Date(item.getPurchaseTime());
                     purchaseDate.setText(date.toString());
                     return view;

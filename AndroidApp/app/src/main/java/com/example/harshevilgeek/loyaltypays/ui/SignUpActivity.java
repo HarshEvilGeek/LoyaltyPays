@@ -225,7 +225,7 @@ public class SignUpActivity extends Activity {
         user.setCompanyName(name);
         user.setPassword(password);
         user.setUsername(email);
-        user.setCompanyLocations(Arrays.asList(locationsArray));
+        user.setCompanyLocations(Arrays.asList(locationsArray).toString());
         user.setUserType(LoyaltyConstants.VALUE_CUSTOMER_TYPE_RETAILER);
         signUp(user);
     }

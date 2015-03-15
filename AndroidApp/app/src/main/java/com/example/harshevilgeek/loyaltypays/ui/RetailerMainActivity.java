@@ -41,6 +41,7 @@ public class RetailerMainActivity extends FragmentActivity {
 
     private Button editButton;
     private Button deleteButton;
+    private Button submitCouponButton;
 
     private LinearLayout modifyLayout;
 
@@ -60,6 +61,7 @@ public class RetailerMainActivity extends FragmentActivity {
         modifyLayout = (LinearLayout) findViewById(R.id.modify_layout);
         editButton = (Button) findViewById(R.id.edit_button);
         deleteButton = (Button) findViewById(R.id.delete_button);
+        submitCouponButton = (Button) findViewById(R.id.send_coupon_button);
 
         addNewButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -209,6 +211,16 @@ public class RetailerMainActivity extends FragmentActivity {
                             updateModifiable();
                         }
                     });
+                }
+            });
+            submitCouponButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(RetailerMainActivity.this, RetailerDiscountPostActivity.class);
+                    intent.putExtra(RetailerDiscountPostActivity.CARD_ID_KEY, selectedItem);
+                    selectedItem = null;
+                    updateModifiable();
+                    startActivity(intent);
                 }
             });
         }

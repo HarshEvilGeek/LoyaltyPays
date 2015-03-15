@@ -44,6 +44,11 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
+            android:name=".ui.RetailerDiscountPostActivity"
+            android:label="@string/post_discount_label"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
             android:name=".ui.LoginActivity"
             android:label="@string/title_activity_login"
              android:theme="@android:style/Theme.Holo.Light"/>

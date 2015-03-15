@@ -46,11 +46,11 @@ public class LoyaltyUser extends ParseUser {
         put(LoyaltyConstants.KEY_COMPANY_IMAGE, companyImage);
     }
 
-    public List<String> getCompanyLocations() {
-        return getList(LoyaltyConstants.KEY_COMPANY_LOCATIONS);
+    public String getCompanyLocations() {
+        return getString(LoyaltyConstants.KEY_COMPANY_LOCATIONS);
     }
 
-    public void setCompanyLocations(List<String> companyLocations) {
+    public void setCompanyLocations(String companyLocations) {
         put(LoyaltyConstants.KEY_COMPANY_LOCATIONS, companyLocations);
     }
 

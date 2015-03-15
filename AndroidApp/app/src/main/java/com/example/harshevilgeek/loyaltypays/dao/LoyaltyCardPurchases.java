@@ -23,6 +23,14 @@ public class LoyaltyCardPurchases extends ParseObject {
         put(LoyaltyConstants.KEY_PURCHASE_ID, purchaseId);
     }
 
+    public String getCompanyName() {
+        return getString(LoyaltyConstants.KEY_COMPANY_NAME);
+    }
+
+    public void setCompanyName(String companyName) {
+        put(LoyaltyConstants.KEY_COMPANY_NAME, companyName);
+    }
+
     public String getCompanyId() {
         return getString(LoyaltyConstants.KEY_COMPANY_ID);
     }

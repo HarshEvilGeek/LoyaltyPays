@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/card_id"
+        android:id="@+id/card_id_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
@@ -13,8 +13,6 @@
         android:layout_marginTop="10dp"
         android:hint="@string/purchase_card_id"
         android:gravity="top">
-
-        <requestFocus />
     </EditText>
 
     <EditText

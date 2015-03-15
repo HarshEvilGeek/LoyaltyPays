@@ -66,6 +66,7 @@ public class LoyaltyConstants {
     public static final String KEY_FEEDBACK_LOCATION = "feedbackLocation";
 
     //feedback constants
+    public static final String KEY_DISCOUNT_NAME = "discountName";
     public static final String KEY_DISCOUNT_TEXT = "discountText";
     public static final String KEY_DISCOUNT_MIN_POINTS = "discountMinPoints";
     public static final String KEY_DISCOUNT_IMAGE = "discountImage";

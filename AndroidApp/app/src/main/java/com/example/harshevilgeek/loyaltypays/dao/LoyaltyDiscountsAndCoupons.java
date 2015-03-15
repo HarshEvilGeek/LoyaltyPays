@@ -31,6 +31,22 @@ public class LoyaltyDiscountsAndCoupons extends ParseObject {
         put(LoyaltyConstants.KEY_CUSTOMER_ID, customerId);
     }
 
+    public String getLoyaltyCardTypeId() {
+        return getString(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID);
+    }
+
+    public void setLoyaltyCardTypeId(String loyaltyCardTypeId) {
+        put(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID, loyaltyCardTypeId);
+    }
+
+    public String getDiscountName() {
+        return getString(LoyaltyConstants.KEY_DISCOUNT_NAME);
+    }
+
+    public void setDiscountName(String discountName) {
+        put(LoyaltyConstants.KEY_DISCOUNT_NAME, discountName);
+    }
+
     public String getDiscountText() {
         return getString(LoyaltyConstants.KEY_DISCOUNT_TEXT);
     }

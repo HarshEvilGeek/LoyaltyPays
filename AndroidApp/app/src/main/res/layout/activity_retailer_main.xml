@@ -52,7 +52,7 @@
             android:text="@string/delete_loyalty_card" />
 
         <Button
-            android:id="@+id/send_coupon"
+            android:id="@+id/send_coupon_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
