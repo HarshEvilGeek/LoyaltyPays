@@ -148,7 +148,7 @@ public class RegisterWithARetailerActivity  extends Activity{
         loyaltyCardItem.setCustomerId(user.getObjectId());
         loyaltyCardItem.setLoyaltyCardTypeId(loyaltyCardId);
         loyaltyCardItem.setCompanyName(companyName);
-        loyaltyCardItem.setCardLocation(location);
+        loyaltyCardItem.setCardLocations(location);
         loyaltyCardItem.setLoyaltyPoints(100);
         ParseACL acl = new ParseACL();
 

@@ -351,6 +351,8 @@ public class CustomerMainActivity extends FragmentActivity {
                     optionsDrawer.openDrawer(drawerList);
                 }
                 return true;
+            case R.id.action_logout:
+                signoutUser();
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -447,13 +449,6 @@ public class CustomerMainActivity extends FragmentActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-
-        menu.findItem(R.id.action_settings).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            public boolean onMenuItemClick(MenuItem item) {
-                startActivity(new Intent(CustomerMainActivity.this, SettingsActivity.class));
-                return true;
-            }
-        });
         return true;
     }
 
@@ -554,5 +549,15 @@ public class CustomerMainActivity extends FragmentActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(MODE, mMode);
+    }
+
+    private void signoutUser()
+    {
+        // Call the Parse log out method
+        ParseUser.logOut();
+        // Start and intent for the dispatch activity
+        Intent intent = new Intent(this, DispatchActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
