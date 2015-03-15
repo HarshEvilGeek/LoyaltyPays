@@ -39,11 +39,11 @@ public class LoyaltyCardItem extends ParseObject {
         put(LoyaltyConstants.KEY_COMPANY_IMAGE, companyImage);
     }
 
-    public String getCompanyLocations() {
-        return getString(LoyaltyConstants.KEY_COMPANY_LOCATIONS);
+    public List<String> getCompanyLocations() {
+        return getList(LoyaltyConstants.KEY_COMPANY_LOCATIONS);
     }
 
-    public void setCompanyLocations(String companyLocations) {
+    public void setCompanyLocations(List<String> companyLocations) {
         put(LoyaltyConstants.KEY_COMPANY_LOCATIONS, companyLocations);
     }
 
@@ -63,12 +63,12 @@ public class LoyaltyCardItem extends ParseObject {
         put(LoyaltyConstants.KEY_CUSTOMER_ID, customerId);
     }
 
-    public String getCardLocation() {
-        return getString(LoyaltyConstants.KEY_CARD_LOCATION);
+    public List<String> getCardLocations() {
+        return getList(LoyaltyConstants.KEY_COMPANY_LOCATIONS);
     }
 
-    public void setCardLocation(String cardLocation) {
-        put(LoyaltyConstants.KEY_CARD_LOCATION, cardLocation);
+    public void setCardLocations(List<String> companyLocations) {
+        put(LoyaltyConstants.KEY_COMPANY_LOCATIONS, companyLocations);
     }
 
     public ParseFile getQRCode() {
