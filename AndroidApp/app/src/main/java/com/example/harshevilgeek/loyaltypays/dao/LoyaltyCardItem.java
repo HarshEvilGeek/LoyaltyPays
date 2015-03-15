@@ -63,12 +63,12 @@ public class LoyaltyCardItem extends ParseObject {
         put(LoyaltyConstants.KEY_CUSTOMER_ID, customerId);
     }
 
-    public List<String> getCardLocations() {
-        return getList(LoyaltyConstants.KEY_COMPANY_LOCATIONS);
+    public String getCardLocations() {
+        return getString(LoyaltyConstants.KEY_CARD_LOCATION);
     }
 
-    public void setCardLocations(List<String> companyLocations) {
-        put(LoyaltyConstants.KEY_COMPANY_LOCATIONS, companyLocations);
+    public void setCardLocations(String cardLocations) {
+        put(LoyaltyConstants.KEY_CARD_LOCATION, cardLocations);
     }
 
     public ParseFile getQRCode() {
