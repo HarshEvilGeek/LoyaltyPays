@@ -303,15 +303,7 @@ public class CustomerMainActivity extends FragmentActivity {
                     new ParseQueryAdapter.QueryFactory<LoyaltyPromotionsAndDeals>() {
                         public ParseQuery<LoyaltyPromotionsAndDeals> create() {
                             ParseQuery<LoyaltyPromotionsAndDeals> query = LoyaltyPromotionsAndDeals.getQuery();
-                            query.include(LoyaltyConstants.KEY_USER);
                             query.orderByDescending("createdAt");
-                            ParseUser currentUser = ParseUser.getCurrentUser();
-                            List<String> locations = (List<String>) currentUser.get(LoyaltyConstants.KEY_CUSTOMER_LOCATIONS);
-                            String location = "";
-                            if (!locations.isEmpty()) {
-                                location = locations.get(0);
-                            }
-                            query.whereContains(LoyaltyConstants.KEY_CARD_LOCATION, location);
                             query.setLimit(MAX_LOYALTY_CARD_RESULTS);
                             return query;
                         }
