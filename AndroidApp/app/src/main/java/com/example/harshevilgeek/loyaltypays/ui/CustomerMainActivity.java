@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,6 +30,7 @@ import com.example.harshevilgeek.loyaltypays.constants.LoyaltyConstants;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardItem;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardPurchases;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyCardType;
+import com.example.harshevilgeek.loyaltypays.dao.LoyaltyDiscountsAndCoupons;
 import com.example.harshevilgeek.loyaltypays.dao.LoyaltyPromotionsAndDeals;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -390,7 +393,7 @@ public class CustomerMainActivity extends FragmentActivity {
         mAdapter.loadObjects();
     }
 
-    private void showLoyaltyCardDetails(ParseObject item)
+    private void showLoyaltyCardDetails(final ParseObject item)
     {
         AlertDialog.Builder loyaltyCardAlert =  new AlertDialog.Builder(this);
         loyaltyCardAlert.setTitle("Card Details");
@@ -409,13 +412,45 @@ public class CustomerMainActivity extends FragmentActivity {
         cardNumberTV.setText("Card Id : " + item.getObjectId());
 
         ListView discountLV = (ListView) dialogView.findViewById(R.id.discount_lv);
-        final ArrayAdapter<String> cardDetailsAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
 
-        cardDetailsAdapter.add("discount1");
-        cardDetailsAdapter.add("discount2");
-        cardDetailsAdapter.add("discount3");
+        ParseQueryAdapter.QueryFactory<LoyaltyDiscountsAndCoupons> factory =
+                new ParseQueryAdapter.QueryFactory<LoyaltyDiscountsAndCoupons>() {
+                    public ParseQuery<LoyaltyDiscountsAndCoupons> create() {
+                        ParseQuery<LoyaltyDiscountsAndCoupons> query = LoyaltyDiscountsAndCoupons.getQuery();
+                        query.orderByDescending("createdAt");
+                        query.whereEqualTo(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID, item.get(LoyaltyConstants.KEY_LOYALTY_CARD_TYPE_ID));
+                        query.setLimit(MAX_LOYALTY_CARD_RESULTS);
+                        return query;
+                    }
+                };
 
-        discountLV.setAdapter(cardDetailsAdapter);
+        // Set up the query adapter
+        ParseQueryAdapter<LoyaltyDiscountsAndCoupons> discountQueryAdapter = new ParseQueryAdapter<LoyaltyDiscountsAndCoupons>(this, factory) {
+            @Override
+            public View getItemView(LoyaltyDiscountsAndCoupons discountItem, View view, ViewGroup parent) {
+                if (view == null) {
+                    view = View.inflate(getContext(), R.layout.customer_discount_item, null);
+                }
+                TextView discountName = (TextView) view.findViewById(R.id.discount_name);
+                TextView discountText = (TextView) view.findViewById(R.id.discount_text);
+
+                discountName.setText((String)discountItem.get(LoyaltyConstants.KEY_DISCOUNT_NAME));
+                discountText.setText((String)discountItem.get(LoyaltyConstants.KEY_DISCOUNT_TEXT));
+
+                return view;
+            }
+        };
+
+        // Disable automatic loading when the adapter is attached to a view.
+        discountQueryAdapter.setAutoload(false);
+
+        // Disable pagination, we'll manage the query limit ourselves
+        discountQueryAdapter.setPaginationEnabled(false);
+
+        discountLV.setAdapter(discountQueryAdapter);
+
+        discountQueryAdapter.loadObjects();
+
         loyaltyCardAlert.setNegativeButton("Ok",
                 new DialogInterface.OnClickListener() {
 
