@@ -86,6 +86,8 @@ public class CustomerMainActivity extends FragmentActivity {
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setIcon(R.drawable.home_icon);
+
+        setActivityTitle();
         optionsDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerList = (ListView) findViewById(R.id.main_options_list);
         drawerList.setOnItemClickListener(new DrawerItemClickListener(this));
@@ -106,6 +108,22 @@ public class CustomerMainActivity extends FragmentActivity {
                 handleItemClick(item);
             }
         });
+    }
+
+    private void setActivityTitle() {
+
+        if(MODE_CARD_ITEMS.equals(mMode)) {
+            getActionBar().setTitle(getString(R.string.option_view_registered_retailers));
+        }
+        else if (MODE_CARD_TYPES.equals(mMode)) {
+            getActionBar().setTitle(getString(R.string.option_register_with_retailer));
+        }
+        else if (MODE_CARD_PROMOTIONS.equals(mMode)) {
+            getActionBar().setTitle(getString(R.string.option_view_promotions));
+        }
+        else if (MODE_CARD_PURCHASES.equals(mMode)) {
+            getActionBar().setTitle(getString(R.string.option_usage_history));
+        }
     }
 
     private class DrawerItemClickListener implements AdapterView.OnItemClickListener
