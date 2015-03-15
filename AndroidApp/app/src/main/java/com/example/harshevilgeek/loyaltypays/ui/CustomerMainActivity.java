@@ -394,16 +394,28 @@ public class CustomerMainActivity extends FragmentActivity {
     {
         AlertDialog.Builder loyaltyCardAlert =  new AlertDialog.Builder(this);
         loyaltyCardAlert.setTitle("Card Details");
-        final ArrayAdapter<String> cardDetailsAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.card_details_alert, null);
+        loyaltyCardAlert.setView(dialogView);
+        TextView loyaltyPointsTV = (TextView) dialogView.findViewById(R.id.card_loyalty_points);
+        TextView cardNumberTV = (TextView) dialogView.findViewById(R.id.card_id);
+
         String loyaltyPoints = String.valueOf(item.get(LoyaltyConstants.KEY_LOYALTY_POINTS));
         if(loyaltyPoints == null) {
             loyaltyPoints = "0";
         }
-        cardDetailsAdapter.add("Loyalty Points : " + loyaltyPoints);
-        cardDetailsAdapter.add("Card Id : " + item.getObjectId());
+        loyaltyPointsTV.setText("Loyalty Points : " + loyaltyPoints);
+
+        cardNumberTV.setText("Card Id : " + item.getObjectId());
+
+        ListView discountLV = (ListView) dialogView.findViewById(R.id.discount_lv);
+        final ArrayAdapter<String> cardDetailsAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
+
         cardDetailsAdapter.add("discount1");
         cardDetailsAdapter.add("discount2");
         cardDetailsAdapter.add("discount3");
+
+        discountLV.setAdapter(cardDetailsAdapter);
         loyaltyCardAlert.setNegativeButton("Ok",
                 new DialogInterface.OnClickListener() {
 
@@ -412,7 +424,6 @@ public class CustomerMainActivity extends FragmentActivity {
                         dialog.dismiss();
                     }
                 });
-        loyaltyCardAlert.setAdapter(cardDetailsAdapter,null);
         loyaltyCardAlert.show();
 
     }
