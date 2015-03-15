@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -20,6 +22,7 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import java.util.Arrays;
 import java.util.Calendar;
 
 /**
@@ -39,7 +42,7 @@ public class RegisterWithARetailerActivity  extends Activity{
     private EditText emailET;
     private EditText ageET;
     private EditText genderET;
-    private EditText locationET;
+    private AutoCompleteTextView locationTV;
     private Button registerButton;
     private CheckBox termsAndConditionsCB;
 
@@ -53,7 +56,10 @@ public class RegisterWithARetailerActivity  extends Activity{
         emailET = (EditText) findViewById(R.id.user_email);
         ageET = (EditText) findViewById(R.id.user_calculated_age);
         genderET = (EditText) findViewById(R.id.user_gender);
-        locationET = (EditText) findViewById(R.id.user_location);
+        locationTV = (AutoCompleteTextView) findViewById(R.id.user_location);
+        ArrayAdapter<String> locationAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, Arrays.asList(getResources().getStringArray(R.array.country_array)));
+        locationTV.setAdapter(locationAdapter);
         registerButton = (Button) findViewById(R.id.register);
         termsAndConditionsCB = (CheckBox) findViewById(R.id.termsAndCondCheckBox);
 
@@ -127,7 +133,7 @@ public class RegisterWithARetailerActivity  extends Activity{
         userEmail = emailET.getText().toString().trim();
         gender = genderET.getText().toString().trim();
         age = Integer.parseInt(ageET.getText().toString().trim());
-        String location = locationET.getText().toString().trim();
+        String location = locationTV.getText().toString().trim();
 
         ParseUser user = ParseUser.getCurrentUser();
 
@@ -142,6 +148,7 @@ public class RegisterWithARetailerActivity  extends Activity{
         loyaltyCardItem.setCustomerId(user.getObjectId());
         loyaltyCardItem.setLoyaltyCardTypeId(loyaltyCardId);
         loyaltyCardItem.setCompanyName(companyName);
+        loyaltyCardItem.setCardLocation(location);
         loyaltyCardItem.setLoyaltyPoints(100);
         ParseACL acl = new ParseACL();
 
