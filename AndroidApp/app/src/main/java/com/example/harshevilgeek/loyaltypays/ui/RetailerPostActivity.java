@@ -44,7 +44,7 @@ public class RetailerPostActivity extends Activity {
     public static final String ITEM_TERMS = "ITEM_TERMS";
 
 
-    private static final int MAX_CHARACTER_COUNT = 20;
+    private static final int MAX_CHARACTER_COUNT = 50;
 
     String mPostAction = CARD_TYPE_ACTION;
 
