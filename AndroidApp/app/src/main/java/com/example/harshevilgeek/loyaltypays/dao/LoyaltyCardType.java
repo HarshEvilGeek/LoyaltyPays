@@ -47,12 +47,12 @@ public class LoyaltyCardType extends ParseObject {
         put(LoyaltyConstants.KEY_COMPANY_IMAGE, companyImage);
     }
 
-    public String getCardLocations() {
-        return getString(LoyaltyConstants.KEY_CARD_LOCATION);
+    public List<String> getCardLocations() {
+        return getList(LoyaltyConstants.KEY_COMPANY_LOCATIONS);
     }
 
-    public void setCardLocations(String cardLocations) {
-        put(LoyaltyConstants.KEY_CARD_LOCATION, cardLocations);
+    public void setCardLocations(List<String> companyLocations) {
+        put(LoyaltyConstants.KEY_COMPANY_LOCATIONS, companyLocations);
     }
 
     public String getCardTerms() {
